@@ -1,0 +1,7 @@
+# Config values for kube-prometheus-stack,
+# more detail refer to https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelector:
+      matchLabels:
+        app: dragonfly
