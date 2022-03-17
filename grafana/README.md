@@ -8,7 +8,7 @@ Grafana dashboard including manager, scheduler and cdn.
 
 Import the grafana dashboard reference documentation [export-import](https://grafana.com/docs/grafana/latest/dashboards/export-import/).
 
-Dragonfly grafana dashboard address is:
+Dragonfly grafana dashboard info is:
 
 <!-- markdownlint-disable -->
 
