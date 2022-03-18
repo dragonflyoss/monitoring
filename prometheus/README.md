@@ -12,5 +12,6 @@ helm repo update
 ## Install kube-prometheus-stack charts
 
 ```bash
-helm install prometheus prometheus-community/kube-prometheus-stack -f https://raw.githubusercontent.com/dragonflyoss/monitoring/main/prometheus/values.yaml
+curl -o values.yaml https://raw.githubusercontent.com/dragonflyoss/monitoring/main/prometheus/values.yaml
+helm install prometheus prometheus-community/kube-prometheus-stack -f values.yaml
 ```
