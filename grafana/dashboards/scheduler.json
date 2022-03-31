@@ -548,7 +548,7 @@
       "pluginVersion": "8.3.6",
       "targets": [
         {
-          "expr": "(sum(rate(dragonfly_scheduler_download_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_download_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_download_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_download_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_download_failure_total{type=\"p2p\"}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_download_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -760,7 +760,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(increase(dragonfly_scheduler_download_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(increase(dragonfly_scheduler_download_failure_total{type=\"p2p\"}[$interval])) by (instance)",
           "hide": false,
           "interval": "60",
           "legendFormat": "{{instance}}",
