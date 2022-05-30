@@ -6,7 +6,7 @@ Deploy the prometheus and grafana using [kube-prometheus-stack](https://artifact
 charts and `prometheus/values.yaml` configuration file.
 
 Generate grafana dashboard configuration
-based on `grafana/dashboards/manager.json`, `grafana/dashboards/scheduler.json` and `grafana/dashboards/cdn.json`.
+based on `grafana/dashboards/manager.json`, `grafana/dashboards/scheduler.json` and `grafana/dashboards/seed-peer.json`.
 
 ## Note to developers
 
