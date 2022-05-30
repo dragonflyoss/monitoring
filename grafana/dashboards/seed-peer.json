@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.3.6"
+      "version": "8.5.0"
     },
     {
       "type": "panel",
@@ -40,7 +40,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -55,16 +58,22 @@
       }
     ]
   },
+  "description": "Granafa dashboard for dragonfly seed peer",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 9186,
+  "gnetId": 15946,
   "graphTooltip": 0,
   "id": null,
+  "iteration": 1653915770697,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -81,6 +90,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "displayName": "${__series.name}",
@@ -114,7 +127,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -124,7 +137,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(increase(dragonfly_cdn_download_traffic{}[1d]))",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "sum(increase(dragonfly_dfdaemon_seed_peer_download_traffic{type=\"back_to_source\"}[1d]))",
           "instant": false,
           "interval": "60",
           "legendFormat": "",
@@ -162,6 +179,10 @@
       }
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -222,7 +243,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "datasource": {
@@ -230,7 +251,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "(sum(rate(dragonfly_cdn_download_total{}[$interval])) -\nsum(rate(dragonfly_cdn_download_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_cdn_download_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_dfdaemon_seed_peer_download_total{}[$interval])) -\nsum(rate(dragonfly_dfdaemon_seed_peer_download_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_dfdaemon_seed_peer_download_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -242,6 +263,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -299,7 +324,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "datasource": {
@@ -307,7 +332,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_cdn_download_total{}[$interval]))",
+          "expr": "sum(irate(dragonfly_dfdaemon_seed_peer_download_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -323,6 +348,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -354,7 +383,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -369,7 +398,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "increase(dragonfly_cdn_download_total{}[$interval])",
+          "expr": "increase(dragonfly_dfdaemon_seed_peer_download_total{}[$interval])",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -415,6 +444,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -446,7 +479,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -461,7 +494,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "increase(dragonfly_cdn_download_failure_total{}[$interval])",
+          "expr": "increase(dragonfly_dfdaemon_seed_peer_download_failure_total{}[$interval])",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -507,6 +540,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -538,7 +575,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -553,7 +590,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(increase(dragonfly_cdn_concurrent_download_total{}[$interval])) by (instance)",
+          "expr": "sum(increase(dragonfly_dfdaemon_seed_peer_concurrent_download_total{}[$interval])) by (instance)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -596,6 +633,10 @@
     },
     {
       "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -608,6 +649,10 @@
       "type": "row"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -668,9 +713,13 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "(sum(rate(grpc_server_handled_total{grpc_service=\"cdnsystem.Seeder\",grpc_type=\"unary\",grpc_code=\"OK\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"cdnsystem.Seeder\",grpc_type=\"unary\",grpc_code=\"NotFound\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"cdnsystem.Seeder\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"cdnsystem.Seeder\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\"}[$interval])))\n/ \nsum(rate(grpc_server_started_total{grpc_service=\"cdnsystem.Seeder\",grpc_type=\"unary\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
@@ -683,6 +732,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -740,7 +793,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "expr": "sum(irate(grpc_server_started_total{grpc_service=\"cdnsystem.Seeder\"}[$interval]))",
@@ -748,7 +801,8 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "title": "GRPC QPS",
@@ -759,6 +813,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -790,7 +848,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -805,7 +863,8 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "{{grpc_method}}/{{grpc_code}}",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "thresholds": [],
@@ -840,6 +899,10 @@
     },
     {
       "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -856,6 +919,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -889,7 +956,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -904,7 +971,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "go_goroutines{container=\"cdn\"}",
+          "expr": "go_goroutines{container=\"seed-peer\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -950,6 +1017,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -981,7 +1052,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -996,7 +1067,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "go_gc_duration_seconds{container=\"cdn\"}",
+          "expr": "go_gc_duration_seconds{container=\"seed-peer\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1042,6 +1113,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -1073,7 +1148,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1108,7 +1183,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "process_virtual_memory_bytes{container=\"cdn\"}",
+          "expr": "process_virtual_memory_bytes{container=\"seed-peer\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1154,6 +1229,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -1185,7 +1264,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1205,7 +1284,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "go_memstats_alloc_bytes{container=\"cdn\"}",
+          "expr": "go_memstats_alloc_bytes{container=\"seed-peer\"}",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-bytes_allocated",
@@ -1219,7 +1298,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "go_memstats_stack_inuse_bytes{component=\"cdn\"}",
+          "expr": "go_memstats_stack_inuse_bytes{component=\"seed-peer\"}",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-stack_inuse",
@@ -1233,7 +1312,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "go_memstats_heap_inuse_bytes{container=\"cdn\"}",
+          "expr": "go_memstats_heap_inuse_bytes{container=\"seed-peer\"}",
           "hide": false,
           "interval": "60",
           "intervalFactor": 2,
@@ -1248,7 +1327,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "rate(go_memstats_alloc_bytes_total{container=\"cdn\"}[30s])",
+          "expr": "rate(go_memstats_alloc_bytes_total{container=\"seed-peer\"}[30s])",
           "hide": false,
           "interval": "",
           "legendFormat": "{{instance}}-alloc_rate",
@@ -1288,7 +1367,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 34,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1399,7 +1478,8 @@
     ]
   },
   "timezone": "",
-  "title": "CDN",
-  "version": 1,
+  "title": "Seed Peer",
+  "uid": "UtXpSprnk",
+  "version": 5,
   "weekStart": ""
 }

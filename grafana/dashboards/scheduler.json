@@ -21,7 +21,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "8.3.6"
+      "version": "8.5.0"
     },
     {
       "type": "panel",
@@ -52,7 +52,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -69,14 +72,19 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 9186,
+  "gnetId": 15944,
   "graphTooltip": 0,
   "id": null,
+  "iteration": 1653915217575,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -89,6 +97,10 @@
       "type": "row"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -127,12 +139,17 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single"
+          "mode": "single",
+          "sort": "none"
         }
       },
       "pluginVersion": "v1.0",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(dragonfly_scheduler_traffic{}) by (type)",
           "interval": "60",
           "legendFormat": "{{type}}",
@@ -147,6 +164,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "displayName": "$cluster",
@@ -180,7 +201,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -195,7 +216,8 @@
           "instant": false,
           "interval": "60",
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "thresholds": [],
@@ -233,6 +255,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "displayName": "$cluster",
@@ -266,7 +292,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -281,7 +307,8 @@
           "instant": false,
           "interval": "60",
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "thresholds": [],
@@ -319,6 +346,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "displayName": "$cluster",
@@ -352,7 +383,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -367,7 +398,8 @@
           "instant": false,
           "interval": "60",
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "thresholds": [],
@@ -405,6 +437,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "unit": "bytes"
@@ -437,7 +473,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -451,7 +487,8 @@
           "instant": false,
           "interval": "60",
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "thresholds": [],
@@ -485,6 +522,10 @@
       }
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -545,9 +586,13 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "(sum(rate(dragonfly_scheduler_download_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_download_failure_total{type=\"p2p\"}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_download_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
@@ -560,6 +605,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -617,7 +666,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "expr": "sum(irate(dragonfly_scheduler_download_total{}[$interval]))",
@@ -625,7 +674,8 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "title": "Download QPS",
@@ -636,6 +686,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 6,
       "fillGradient": 0,
       "gridPos": {
@@ -662,7 +716,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -719,6 +773,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 6,
       "fillGradient": 0,
       "gridPos": {
@@ -745,7 +803,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -798,6 +856,10 @@
       }
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -858,7 +920,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "expr": "(sum(rate(dragonfly_scheduler_register_peer_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_register_peer_task_failure_total{}[$interval])))\n/\nsum(rate(dragonfly_scheduler_register_peer_task_total{}[$interval]))",
@@ -867,13 +929,18 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "title": "Register Success Rate",
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -931,7 +998,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "expr": "sum(irate(dragonfly_scheduler_register_peer_task_total{}[$interval]))",
@@ -939,7 +1006,8 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "title": "Register QPS",
@@ -950,6 +1018,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 6,
       "fillGradient": 0,
       "gridPos": {
@@ -976,7 +1048,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1032,6 +1104,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 6,
       "fillGradient": 0,
       "gridPos": {
@@ -1058,7 +1134,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1110,6 +1186,10 @@
       }
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1171,7 +1251,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "expr": "(sum(rate(dragonfly_scheduler_leave_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_leave_task_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_leave_task_total{}[$interval]))",
@@ -1179,13 +1259,18 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "title": "Leave Success Rate",
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1243,7 +1328,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "expr": "sum(irate(dragonfly_scheduler_leave_task_total{}[$interval]))",
@@ -1251,7 +1336,8 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "title": "Leave QPS",
@@ -1262,6 +1348,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 6,
       "fillGradient": 0,
       "gridPos": {
@@ -1288,7 +1378,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1344,6 +1434,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 6,
       "fillGradient": 0,
       "gridPos": {
@@ -1353,7 +1447,7 @@
         "y": 47
       },
       "hiddenSeries": false,
-      "id": 84,
+      "id": 88,
       "legend": {
         "avg": false,
         "current": false,
@@ -1370,7 +1464,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1385,7 +1479,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
-          "expr": "sum(increase(dragonfly_scheduler_leave_task_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(increase(dragonfly_scheduler_leave_task_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "refId": "A"
@@ -1393,7 +1487,7 @@
       ],
       "thresholds": [],
       "timeRegions": [],
-      "title": "Leave Failed",
+      "title": "Leave",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1422,6 +1516,682 @@
       }
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 95
+              },
+              {
+                "color": "#d44a3a",
+                "value": 99
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 55
+      },
+      "id": 86,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.5.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "(sum(rate(dragonfly_scheduler_stat_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_stat_task_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_stat_task_total{}[$interval]))",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Stat Success Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 18,
+        "x": 6,
+        "y": 55
+      },
+      "id": 87,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.5.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "sum(irate(dragonfly_scheduler_stat_task_total{}[$interval]))",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Stat QPS",
+      "type": "stat"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fill": 6,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 59
+      },
+      "hiddenSeries": false,
+      "id": 89,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "exemplar": true,
+          "expr": "sum(increase(dragonfly_scheduler_stat_task_total{}[$interval])) by (instance)",
+          "interval": "60",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Stat",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fill": 6,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 59
+      },
+      "hiddenSeries": false,
+      "id": 84,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "exemplar": true,
+          "expr": "sum(increase(dragonfly_scheduler_stat_task_failure_total{}[$interval])) by (instance)",
+          "interval": "60",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Stat Failed",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 95
+              },
+              {
+                "color": "#d44a3a",
+                "value": 99
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 67
+      },
+      "id": 90,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.5.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "(sum(rate(dragonfly_scheduler_announce_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_announce_task_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_announce_task_total{}[$interval]))",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Announce Success Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 18,
+        "x": 6,
+        "y": 67
+      },
+      "id": 91,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.5.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "expr": "sum(irate(dragonfly_scheduler_announce_task_total{}[$interval]))",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Announce QPS",
+      "type": "stat"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fill": 6,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 71
+      },
+      "hiddenSeries": false,
+      "id": 93,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "exemplar": true,
+          "expr": "sum(increase(dragonfly_scheduler_announce_task_total{}[$interval])) by (instance)",
+          "interval": "60",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Announce",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fill": 6,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 71
+      },
+      "hiddenSeries": false,
+      "id": 92,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.5.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "exemplar": true,
+          "expr": "sum(increase(dragonfly_scheduler_announce_task_failure_total{}[$interval])) by (instance)",
+          "interval": "60",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Announce Failed",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1442,7 +2212,7 @@
         "h": 9,
         "w": 4,
         "x": 0,
-        "y": 55
+        "y": 79
       },
       "id": 52,
       "links": [],
@@ -1460,7 +2230,8 @@
           "values": false
         },
         "tooltip": {
-          "mode": "single"
+          "mode": "single",
+          "sort": "none"
         }
       },
       "pluginVersion": "v1.0",
@@ -1469,7 +2240,8 @@
           "expr": "sum(dragonfly_scheduler_peer_task_total{}) by (type)",
           "interval": "60",
           "legendFormat": "{{type}}",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "title": "Task Type",
@@ -1480,13 +2252,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 20,
         "x": 4,
-        "y": 55
+        "y": 79
       },
       "hiddenSeries": false,
       "id": 56,
@@ -1506,7 +2282,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1558,294 +2334,323 @@
       }
     },
     {
-      "collapsed": false,
+      "collapsed": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 88
       },
       "id": 72,
-      "panels": [],
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "bytes"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 2
+          },
+          "id": 60,
+          "options": {
+            "displayMode": "gradient",
+            "minVizHeight": 10,
+            "minVizWidth": 0,
+            "orientation": "vertical",
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showUnfilled": true
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "exemplar": false,
+              "expr": "topk(10, sum(increase(dragonfly_scheduler_peer_host_traffic{traffic_type=\"download\"}[1d])) by (peer_host_ip))",
+              "instant": true,
+              "interval": "60",
+              "legendFormat": "{{peer_host_ip}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Host Download Traffic Top 10",
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              },
+              "unit": "bytes"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 12
+          },
+          "id": 62,
+          "options": {
+            "displayMode": "gradient",
+            "minVizHeight": 10,
+            "minVizWidth": 0,
+            "orientation": "vertical",
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showUnfilled": true
+          },
+          "pluginVersion": "8.5.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "exemplar": false,
+              "expr": "topk(10, sum(increase(dragonfly_scheduler_peer_host_traffic{traffic_type=\"upload\"}[1d])) by (peer_host_ip))",
+              "instant": true,
+              "interval": "60",
+              "intervalFactor": 1,
+              "legendFormat": "{{peer_host_ip}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Host Upload Traffic Top 10",
+          "type": "bargauge"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "",
+          "fill": 2,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 22
+          },
+          "hiddenSeries": false,
+          "id": 67,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.5.0",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(dragonfly_scheduler_peer_host_traffic{traffic_type=\"download\"}[1m])) by (peer_host_ip)",
+              "hide": false,
+              "interval": "60",
+              "legendFormat": "{{peer_host_ip}}",
+              "refId": "A",
+              "datasource": "${DS_PROMETHEUS}"
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "Host Download Speed",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "logBase": 1,
+              "show": true
+            },
+            {
+              "format": "bytes",
+              "logBase": 1,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "description": "",
+          "fill": 6,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 22
+          },
+          "hiddenSeries": false,
+          "id": 69,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "8.5.0",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(irate(dragonfly_scheduler_peer_host_traffic{traffic_type=\"upload\"}[1m])) by (peer_host_ip)",
+              "hide": false,
+              "interval": "60",
+              "legendFormat": "{{peer_host_ip}}",
+              "refId": "A",
+              "datasource": "${DS_PROMETHEUS}"
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "Host Upload Speed",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "logBase": 1,
+              "show": true
+            },
+            {
+              "format": "none",
+              "logBase": 1,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        }
+      ],
       "title": "Host",
       "type": "row"
     },
     {
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "bytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 24,
-        "x": 0,
-        "y": 65
-      },
-      "id": 60,
-      "options": {
-        "displayMode": "gradient",
-        "orientation": "vertical",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true
-      },
-      "pluginVersion": "8.3.6",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "exemplar": false,
-          "expr": "topk(10, sum(increase(dragonfly_scheduler_peer_host_traffic{traffic_type=\"download\"}[1d])) by (peer_host_ip))",
-          "instant": true,
-          "interval": "60",
-          "legendFormat": "{{peer_host_ip}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Host Download Traffic Top 10",
-      "type": "bargauge"
-    },
-    {
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "bytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 24,
-        "x": 0,
-        "y": 75
-      },
-      "id": 62,
-      "options": {
-        "displayMode": "gradient",
-        "orientation": "vertical",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true
-      },
-      "pluginVersion": "8.3.6",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
-          "exemplar": false,
-          "expr": "topk(10, sum(increase(dragonfly_scheduler_peer_host_traffic{traffic_type=\"upload\"}[1d])) by (peer_host_ip))",
-          "instant": true,
-          "interval": "60",
-          "intervalFactor": 1,
-          "legendFormat": "{{peer_host_ip}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Host Upload Traffic Top 10",
-      "type": "bargauge"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "description": "",
-      "fill": 2,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 85
-      },
-      "hiddenSeries": false,
-      "id": 67,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.3.6",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "sum(irate(dragonfly_scheduler_peer_host_traffic{traffic_type=\"download\"}[1m])) by (peer_host_ip)",
-          "hide": false,
-          "interval": "60",
-          "legendFormat": "{{peer_host_ip}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Host Download Speed",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bytes",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "bytes",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "description": "",
-      "fill": 6,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 85
-      },
-      "hiddenSeries": false,
-      "id": 69,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.3.6",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "sum(irate(dragonfly_scheduler_peer_host_traffic{traffic_type=\"upload\"}[1m])) by (peer_host_ip)",
-          "hide": false,
-          "interval": "60",
-          "legendFormat": "{{peer_host_ip}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Host Upload Speed",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "bytes",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "none",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
       "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 93
+        "y": 89
       },
       "id": 74,
       "panels": [],
@@ -1853,6 +2658,10 @@
       "type": "row"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1894,7 +2703,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 94
+        "y": 90
       },
       "id": 12,
       "links": [],
@@ -1913,9 +2722,13 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "(sum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"OK\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"NotFound\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\"}[$interval])))\n/ \nsum(rate(grpc_server_started_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
@@ -1928,6 +2741,10 @@
       "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1966,7 +2783,7 @@
         "h": 4,
         "w": 18,
         "x": 6,
-        "y": 94
+        "y": 90
       },
       "id": 14,
       "links": [],
@@ -1985,7 +2802,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "targets": [
         {
           "expr": "sum(irate(grpc_server_started_total{grpc_service=\"scheduler.Scheduler\"}[$interval]))",
@@ -1993,7 +2810,8 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "title": "GRPC QPS",
@@ -2004,13 +2822,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 98
+        "y": 94
       },
       "hiddenSeries": false,
       "id": 26,
@@ -2035,7 +2857,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2050,7 +2872,8 @@
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "{{grpc_method}}/{{grpc_code}}",
-          "refId": "A"
+          "refId": "A",
+          "datasource": "${DS_PROMETHEUS}"
         }
       ],
       "thresholds": [],
@@ -2085,11 +2908,15 @@
     },
     {
       "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 107
+        "y": 103
       },
       "id": 76,
       "panels": [],
@@ -2101,6 +2928,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2110,7 +2941,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 108
+        "y": 104
       },
       "hiddenSeries": false,
       "id": 32,
@@ -2134,7 +2965,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2195,6 +3026,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2204,7 +3039,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 108
+        "y": 104
       },
       "hiddenSeries": false,
       "id": 30,
@@ -2226,7 +3061,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2287,6 +3122,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2296,7 +3135,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 116
+        "y": 112
       },
       "hiddenSeries": false,
       "id": 64,
@@ -2318,7 +3157,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2399,6 +3238,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
@@ -2408,7 +3251,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 116
+        "y": 112
       },
       "hiddenSeries": false,
       "id": 65,
@@ -2430,7 +3273,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.6",
+      "pluginVersion": "8.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2529,7 +3372,7 @@
     }
   ],
   "refresh": false,
-  "schemaVersion": 34,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -2641,6 +3484,7 @@
   },
   "timezone": "",
   "title": "Scheduler",
-  "version": 1,
+  "uid": "lj4R659nk",
+  "version": 8,
   "weekStart": ""
 }
