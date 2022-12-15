@@ -173,7 +173,7 @@
           "refId": "A"
         }
       ],
-      "title": "Peer",
+      "title": "Peer Count",
       "type": "stat"
     },
     {
@@ -267,7 +267,7 @@
           "refId": "A"
         }
       ],
-      "title": "Version",
+      "title": "Peer Version",
       "type": "timeseries"
     },
     {
@@ -1474,6 +1474,6 @@
   "timezone": "",
   "title": "Manager",
   "uid": "TL-e3c9nz",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }

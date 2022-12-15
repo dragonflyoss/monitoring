@@ -1,6 +1,6 @@
 # Grafana
 
-Grafana dashboard including manager, scheduler and seed peer.
+Grafana dashboard including manager, scheduler and peer.
 
 ## Grafana Develop Guide
 
@@ -16,7 +16,7 @@ Dragonfly grafana dashboard info is:
 | :------------------ | :---- | :------------------------------------------- | :----------------------------------------- |
 | Dragonfly Manager   | 15945 | https://grafana.com/grafana/dashboards/15945 | Granafa dashboard for dragonfly manager.   |
 | Dragonfly Scheduler | 15944 | https://grafana.com/grafana/dashboards/15944 | Granafa dashboard for dragonfly scheduler. |
-| Dragonfly Seed Peer | 16349 | https://grafana.com/grafana/dashboards/16349 | Granafa dashboard for dragonfly seed peer. |
+| Dragonfly Peer      | 16349 | https://grafana.com/grafana/dashboards/15946 | Granafa dashboard for dragonfly peer.      |
 
 <!-- markdownlint-restore -->
 
