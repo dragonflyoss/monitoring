@@ -5,3 +5,6 @@ prometheus:
     serviceMonitorSelector:
       matchLabels:
         app: dragonfly
+    ruleSelector:
+      matchLabels:
+        app: dragonfly
