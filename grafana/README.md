@@ -16,7 +16,7 @@ Dragonfly grafana dashboard info is:
 | :------------------ | :---- | :------------------------------------------- | :----------------------------------------- |
 | Dragonfly Manager   | 15945 | https://grafana.com/grafana/dashboards/15945 | Granafa dashboard for dragonfly manager.   |
 | Dragonfly Scheduler | 15944 | https://grafana.com/grafana/dashboards/15944 | Granafa dashboard for dragonfly scheduler. |
-| Dragonfly Peer      | 16349 | https://grafana.com/grafana/dashboards/15946 | Granafa dashboard for dragonfly peer.      |
+| Dragonfly Peer      | 15946 | https://grafana.com/grafana/dashboards/15946 | Granafa dashboard for dragonfly peer.      |
 
 <!-- markdownlint-restore -->
 
