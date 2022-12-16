@@ -1,4 +1,53 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.3.0"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph (old)",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "piechart",
+      "name": "Pie chart",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -26,7 +75,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 15944,
   "graphTooltip": 0,
-  "id": 27,
+  "id": null,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -50,7 +99,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -105,7 +154,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(dragonfly_scheduler_version{}) by (git_version, git_commit)",
@@ -121,7 +170,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -174,7 +223,10 @@
       "pluginVersion": "v1.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(dragonfly_scheduler_peer_task_total{}) by (type)",
           "interval": "60",
           "legendFormat": "{{type}}",
@@ -191,7 +243,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -231,7 +283,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_concurrent_schedule_total{}[$interval])) by (instance)",
@@ -273,7 +325,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -330,7 +382,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "sum(dragonfly_scheduler_traffic{}) by (type)",
           "interval": "60",
@@ -348,7 +400,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -393,7 +445,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(increase(dragonfly_scheduler_traffic{type=\"p2p\"}[$interval]))",
           "forceInterval": false,
           "instant": false,
@@ -439,7 +494,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -484,7 +539,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(increase(dragonfly_scheduler_traffic{type=\"back_to_source\"}[$interval]))",
           "forceInterval": false,
           "instant": false,
@@ -530,7 +588,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -575,7 +633,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(increase(dragonfly_scheduler_peer_host_traffic{traffic_type=\"download\"}[1d]))",
           "forceInterval": false,
           "instant": false,
@@ -621,7 +682,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -665,7 +726,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(increase(dragonfly_scheduler_peer_host_traffic{traffic_type=\"upload\"}[1d]))",
           "instant": false,
           "interval": "60",
@@ -706,7 +770,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -773,7 +837,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(sum(rate(dragonfly_scheduler_download_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_download_failure_total{type=\"p2p\"}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_download_total{}[$interval]))",
           "format": "time_series",
@@ -789,7 +853,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -851,7 +915,10 @@
       "pluginVersion": "9.3.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(irate(dragonfly_scheduler_download_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
@@ -870,7 +937,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -910,7 +977,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_download_total{}[$interval])) by (instance)",
@@ -957,7 +1024,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -997,7 +1064,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_download_failure_total{type=\"p2p\"}[$interval])) by (instance)",
@@ -1040,7 +1107,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1062,7 +1129,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1104,7 +1172,10 @@
       "pluginVersion": "9.3.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "(sum(rate(dragonfly_scheduler_register_peer_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_register_peer_task_failure_total{}[$interval])))\n/\nsum(rate(dragonfly_scheduler_register_peer_task_total{}[$interval]))",
           "format": "time_series",
           "instant": false,
@@ -1120,7 +1191,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1143,7 +1214,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1181,7 +1253,10 @@
       "pluginVersion": "9.3.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(irate(dragonfly_scheduler_register_peer_task_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
@@ -1200,7 +1275,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -1240,7 +1315,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_register_peer_task_total{}[$interval])) by (instance)",
@@ -1286,7 +1361,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -1326,7 +1401,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_register_peer_task_failure_total{}[$interval])) by (instance)",
@@ -1368,7 +1443,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1391,7 +1466,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1433,7 +1509,10 @@
       "pluginVersion": "9.3.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "(sum(rate(dragonfly_scheduler_leave_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_leave_task_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_leave_task_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
@@ -1448,7 +1527,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1471,7 +1550,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1509,7 +1589,10 @@
       "pluginVersion": "9.3.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(irate(dragonfly_scheduler_leave_task_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
@@ -1528,7 +1611,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -1568,7 +1651,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_leave_task_total{}[$interval])) by (instance)",
@@ -1614,7 +1697,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -1654,7 +1737,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_leave_task_total{}[$interval])) by (instance)",
@@ -1696,7 +1779,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1719,7 +1802,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1763,7 +1847,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(sum(rate(dragonfly_scheduler_stat_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_stat_task_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_stat_task_total{}[$interval]))",
           "format": "time_series",
@@ -1779,7 +1863,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1802,7 +1886,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1842,7 +1927,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "sum(irate(dragonfly_scheduler_stat_task_total{}[$interval]))",
           "format": "time_series",
@@ -1862,7 +1947,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -1902,7 +1987,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_stat_task_total{}[$interval])) by (instance)",
@@ -1948,7 +2033,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -1988,7 +2073,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_stat_task_failure_total{}[$interval])) by (instance)",
@@ -2030,7 +2115,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2053,7 +2138,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2097,7 +2183,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(sum(rate(dragonfly_scheduler_announce_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_announce_task_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_announce_task_total{}[$interval]))",
           "format": "time_series",
@@ -2113,7 +2199,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2136,7 +2222,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2176,7 +2263,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "sum(irate(dragonfly_scheduler_announce_task_total{}[$interval]))",
           "format": "time_series",
@@ -2196,7 +2283,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -2236,7 +2323,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_announce_task_total{}[$interval])) by (instance)",
@@ -2282,7 +2369,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -2322,7 +2409,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_announce_task_failure_total{}[$interval])) by (instance)",
@@ -2364,7 +2451,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2387,7 +2474,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2429,7 +2517,10 @@
       "pluginVersion": "9.3.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "editorMode": "code",
           "expr": "(sum(rate(dragonfly_scheduler_leave_host_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_leave_host_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_leave_host_total{}[$interval]))",
           "format": "time_series",
@@ -2446,7 +2537,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2469,7 +2560,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2507,7 +2599,10 @@
       "pluginVersion": "9.3.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "editorMode": "code",
           "expr": "sum(irate(dragonfly_scheduler_leave_host_total{}[$interval]))",
           "format": "time_series",
@@ -2528,7 +2623,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -2568,7 +2663,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2616,7 +2711,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -2656,7 +2751,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(increase(dragonfly_scheduler_leave_task_total{}[$interval])) by (instance)",
@@ -2698,7 +2793,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -2721,7 +2816,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2765,7 +2861,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "(sum(rate(dragonfly_scheduler_announce_host_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_announce_host_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_announce_host_total{}[$interval]))",
@@ -2783,7 +2879,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -2806,7 +2902,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2846,7 +2943,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(irate(dragonfly_scheduler_announce_host_total{}[$interval]))",
@@ -2868,7 +2965,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -2908,7 +3005,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -2956,7 +3053,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 6,
       "fillGradient": 0,
@@ -2996,7 +3093,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3057,7 +3154,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -3067,7 +3164,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -3101,7 +3199,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "topk(10, sum(increase(dragonfly_scheduler_peer_host_traffic{traffic_type=\"download\"}[1d])) by (peer_host_ip))",
@@ -3117,7 +3215,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -3127,7 +3225,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -3161,7 +3260,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
           "expr": "topk(10, sum(increase(dragonfly_scheduler_peer_host_traffic{traffic_type=\"upload\"}[1d])) by (peer_host_ip))",
@@ -3182,7 +3281,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fill": 2,
@@ -3221,7 +3320,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(irate(dragonfly_scheduler_peer_host_traffic{traffic_type=\"download\"}[1m])) by (peer_host_ip)",
           "hide": false,
           "interval": "60",
@@ -3266,7 +3368,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fill": 6,
@@ -3305,7 +3407,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(irate(dragonfly_scheduler_peer_host_traffic{traffic_type=\"upload\"}[1m])) by (peer_host_ip)",
           "hide": false,
           "interval": "60",
@@ -3363,7 +3468,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3385,7 +3490,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -3429,7 +3535,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "(sum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"OK\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"NotFound\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\"}[$interval])))\n/ \nsum(rate(grpc_server_started_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\"}[$interval]))",
           "format": "time_series",
@@ -3445,7 +3551,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3468,7 +3574,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3506,7 +3613,10 @@
       "pluginVersion": "9.3.0",
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(irate(grpc_server_started_total{grpc_service=\"scheduler.Scheduler\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
@@ -3525,7 +3635,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -3568,7 +3678,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "prometheus",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
           "expr": "sum(increase(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\"}[$interval])) by (grpc_code, grpc_method)",
           "format": "time_series",
           "interval": "60",
@@ -3631,7 +3744,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "editable": true,
       "error": false,
@@ -3678,7 +3791,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "go_goroutines{container=\"scheduler\"}",
@@ -3729,7 +3842,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "editable": true,
       "error": false,
@@ -3774,7 +3887,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "go_gc_duration_seconds{container=\"scheduler\"}",
@@ -3825,7 +3938,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "editable": true,
       "error": false,
@@ -3875,7 +3988,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "process_resident_memory_bytes{}",
@@ -3890,7 +4003,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "process_virtual_memory_bytes{container=\"scheduler\"}",
@@ -3941,7 +4054,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus"
+        "uid": "${DS_PROMETHEUS}"
       },
       "editable": true,
       "error": false,
@@ -3991,7 +4104,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "go_memstats_alloc_bytes{container=\"scheduler\"}",
@@ -4006,7 +4119,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "go_memstats_stack_inuse_bytes{container=\"scheduler\"}",
@@ -4018,7 +4131,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "go_memstats_heap_inuse_bytes{container=\"scheduler\"}",
@@ -4030,7 +4143,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "rate(go_memstats_alloc_bytes_total{container=\"scheduler\"}[30s])",
@@ -4083,7 +4196,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "5m",
           "value": "5m"
         },
@@ -4186,6 +4299,6 @@
   "timezone": "",
   "title": "Scheduler",
   "uid": "lj4R659nk",
-  "version": 5,
+  "version": 1,
   "weekStart": ""
 }
