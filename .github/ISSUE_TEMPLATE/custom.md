@@ -1,7 +1,7 @@
 ---
 name: Bug Report
 about: Report a bug for monitoring
-labels: kind/bug
+
 ---
 
 ### Bug report:
