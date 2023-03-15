@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.3.0"
+      "version": "9.3.8"
     },
     {
       "type": "panel",
@@ -211,7 +211,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "targets": [
         {
           "datasource": {
@@ -401,7 +401,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "targets": [
         {
           "datasource": {
@@ -481,7 +481,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "targets": [
         {
           "datasource": {
@@ -539,7 +539,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -592,6 +592,349 @@
       }
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 95
+              },
+              {
+                "color": "#d44a3a",
+                "value": 99
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 25
+      },
+      "id": 57,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.3.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "(sum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval])) -\nsum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{}[$interval])))\n/\nsum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval]))",
+          "format": "time_series",
+          "instant": false,
+          "interval": "60",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Search Scheduler Cluster Success Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 18,
+        "x": 6,
+        "y": 25
+      },
+      "id": 59,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.3.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "sum(irate(dragonfly_manager_search_scheduler_cluster_total{}[$interval]))",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Search Scheduler Cluster QPS",
+      "type": "stat"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fill": 6,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 29
+      },
+      "hiddenSeries": false,
+      "id": 61,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.3.8",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(increase(dragonfly_manager_search_scheduler_cluster_total{}[$interval])) by (instance)",
+          "interval": "60",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Search Scheduler Cluster",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_PROMETHEUS}"
+      },
+      "fill": 6,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 29
+      },
+      "hiddenSeries": false,
+      "id": 63,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.3.8",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(increase(dragonfly_manager_search_scheduler_cluster_failure_total{}[$interval])) by (instance)",
+          "interval": "60",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Search Scheduler Cluster Failed",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
@@ -601,7 +944,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 37
       },
       "id": 46,
       "panels": [],
@@ -654,7 +997,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 26
+        "y": 38
       },
       "id": 36,
       "links": [],
@@ -673,7 +1016,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "targets": [
         {
           "datasource": {
@@ -734,7 +1077,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 26
+        "y": 38
       },
       "id": 38,
       "links": [],
@@ -753,7 +1096,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "targets": [
         {
           "datasource": {
@@ -786,7 +1129,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 31
+        "y": 43
       },
       "hiddenSeries": false,
       "id": 40,
@@ -811,7 +1154,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -879,7 +1222,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 31
+        "y": 43
       },
       "hiddenSeries": false,
       "id": 42,
@@ -899,7 +1242,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -962,7 +1305,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 50
       },
       "id": 48,
       "panels": [],
@@ -987,7 +1330,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 39
+        "y": 51
       },
       "hiddenSeries": false,
       "id": 32,
@@ -1011,7 +1354,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1085,7 +1428,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 39
+        "y": 51
       },
       "hiddenSeries": false,
       "id": 30,
@@ -1107,7 +1450,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1181,7 +1524,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 47
+        "y": 59
       },
       "hiddenSeries": false,
       "id": 28,
@@ -1203,7 +1546,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1297,7 +1640,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 47
+        "y": 59
       },
       "hiddenSeries": false,
       "id": 34,
@@ -1319,7 +1662,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.8",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1535,6 +1878,6 @@
   "timezone": "",
   "title": "Manager",
   "uid": "TL-e3c9nz",
-  "version": 1,
+  "version": 4,
   "weekStart": ""
 }
