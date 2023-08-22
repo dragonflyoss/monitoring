@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.3.0"
+      "version": "10.0.3"
     },
     {
       "type": "panel",
@@ -195,7 +195,6 @@
       },
       "hiddenSeries": false,
       "id": 55,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -213,7 +212,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -561,7 +560,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
@@ -644,7 +643,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "10.0.3",
       "targets": [
         {
           "datasource": {
@@ -687,7 +686,6 @@
       },
       "hiddenSeries": false,
       "id": 61,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -705,7 +703,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -785,7 +783,6 @@
       },
       "hiddenSeries": false,
       "id": 62,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -803,7 +800,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "10.0.3",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -987,7 +984,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "10.0.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1064,8 +1061,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46",
-                "value": null
+                "color": "#299c46"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1151,8 +1147,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1230,7 +1225,6 @@
       },
       "hiddenSeries": false,
       "id": 42,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -1328,7 +1322,6 @@
       },
       "hiddenSeries": false,
       "id": 44,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -1426,7 +1419,6 @@
       },
       "hiddenSeries": false,
       "id": 46,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -1544,8 +1536,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46",
-                "value": null
+                "color": "#299c46"
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1628,8 +1619,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1813,7 +1803,6 @@
       },
       "hiddenSeries": false,
       "id": 32,
-      "isNew": true,
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -1911,7 +1900,6 @@
       },
       "hiddenSeries": false,
       "id": 30,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -2007,7 +1995,6 @@
       },
       "hiddenSeries": false,
       "id": 28,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -2123,7 +2110,6 @@
       },
       "hiddenSeries": false,
       "id": 34,
-      "isNew": true,
       "legend": {
         "avg": false,
         "current": false,
@@ -2244,7 +2230,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 37,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [],
   "templating": {
