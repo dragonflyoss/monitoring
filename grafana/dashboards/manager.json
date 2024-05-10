@@ -64,7 +64,7 @@
       }
     ]
   },
-  "description": "Granafa dashboard for dragonfly manager.",
+  "description": "Grafana dashboard for dragonfly manager.",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 15945,
@@ -1838,6 +1838,6 @@
   "timezone": "",
   "title": "Manager",
   "uid": "TL-e3c9nz",
-  "version": 3,
+  "version": 5,
   "weekStart": ""
 }
