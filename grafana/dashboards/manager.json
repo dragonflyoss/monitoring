@@ -247,7 +247,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"OK\"}[$interval])) + \nsum(irate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"NotFound\"}[$interval])) + \nsum(irate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\"}[$interval])) + \nsum(irate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\"}[$interval])))\n/ \nsum(irate(grpc_server_started_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\"}[$interval]))",
+          "expr": "(sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"OK\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"NotFound\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\"}[$interval])))\n/ \nsum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -329,11 +329,13 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum(irate(grpc_server_started_total{grpc_service=\"manager.Manager\"}[$interval]))",
+          "editorMode": "code",
+          "expr": "sum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -450,7 +452,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\"}[$interval])) by (grpc_code, grpc_method)",
+          "expr": "sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\"}[$interval])) by (grpc_code, grpc_method)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -536,7 +538,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_manager_search_scheduler_cluster_total{}[$interval])) -\nsum(irate(dragonfly_manager_search_scheduler_cluster_failure_total{}[$interval])))\n/\nsum(irate(dragonfly_manager_search_scheduler_cluster_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval])) -\nsum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{}[$interval])))\n/\nsum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval]))",
           "format": "time_series",
           "instant": false,
           "interval": "60",
@@ -619,7 +621,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_manager_search_scheduler_cluster_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -719,7 +721,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_manager_search_scheduler_cluster_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -817,7 +819,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_manager_search_scheduler_cluster_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -869,7 +871,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -917,7 +920,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_manager_requests_total{code=~\"[12]..\"}[$interval]))\n/ \nsum(irate(dragonfly_manager_requests_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_manager_requests_total{code=~\"[12]..\"}[$interval]))\n/ \nsum(rate(dragonfly_manager_requests_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -955,7 +958,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -998,11 +1002,13 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum(irate(dragonfly_manager_requests_total{}[$interval]))",
+          "editorMode": "code",
+          "expr": "sum(rate(dragonfly_manager_requests_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1056,7 +1062,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1119,7 +1126,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_manager_requests_total{url!=\"/healthy/\"}[$interval])) by (code, method, url)",
+          "expr": "sum(rate(dragonfly_manager_requests_total{url!=\"/healthy/\"}[$interval])) by (code, method, url)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1178,7 +1185,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1292,7 +1300,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1393,7 +1402,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1492,7 +1502,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1619,7 +1630,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1838,6 +1850,6 @@
   "timezone": "",
   "title": "Manager",
   "uid": "TL-e3c9nz",
-  "version": 5,
+  "version": 2,
   "weekStart": ""
 }
