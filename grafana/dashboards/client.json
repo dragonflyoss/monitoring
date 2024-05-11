@@ -73,7 +73,7 @@
   "description": "Grafana dashboard for dragonfly client and dragonfly seed client.",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 15946,
+  "gnetId": 21053,
   "graphTooltip": 0,
   "id": null,
   "links": [],
@@ -616,7 +616,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_client_download_traffic{}[$interval])) by (type)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{}[$interval])) by (type)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -718,7 +718,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_client_upload_traffic{}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_upload_traffic{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -820,7 +820,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\"}[$interval])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -922,7 +922,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\"}[$interval])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1024,7 +1024,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\"}[$interval])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1094,7 +1094,7 @@
               }
             ]
           },
-          "unit": "Bps"
+          "unit": "binBps"
         },
         "overrides": []
       },
@@ -1126,7 +1126,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_client_upload_traffic{}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_upload_traffic{}[$interval])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1187,7 +1187,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1283,7 +1284,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "#299c46"
+                "color": "#299c46",
+                "value": null
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1332,7 +1334,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "(sum(irate(dragonfly_client_download_task_total{}[$interval])) -\nsum(irate(dragonfly_client_download_task_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_client_download_task_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_client_download_task_total{}[$interval])) -\nsum(rate(dragonfly_client_download_task_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_client_download_task_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1370,7 +1372,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1415,7 +1418,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_client_download_task_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_download_task_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1474,7 +1477,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1514,7 +1518,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "irate(dragonfly_client_download_task_total{}[$interval])",
+          "expr": "rate(dragonfly_client_download_task_total{}[$interval])",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1575,7 +1579,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1615,7 +1620,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "irate(dragonfly_client_download_task_total{}[$interval])",
+          "expr": "rate(dragonfly_client_download_task_total{}[$interval])",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1692,7 +1697,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1819,7 +1825,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1946,7 +1953,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2073,7 +2081,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2200,7 +2209,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2327,7 +2337,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2454,7 +2465,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2581,7 +2593,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2708,7 +2721,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2835,7 +2849,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2962,7 +2977,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3089,7 +3105,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3216,7 +3233,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3343,7 +3361,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3470,7 +3489,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3597,7 +3617,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3724,7 +3745,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3851,7 +3873,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3978,7 +4001,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4105,7 +4129,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4208,7 +4233,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -4273,7 +4299,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -4390,7 +4417,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4491,7 +4519,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4605,7 +4634,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4706,7 +4736,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4874,6 +4905,6 @@
   "timezone": "",
   "title": "Client",
   "uid": "UtXpSprnk",
-  "version": 75,
+  "version": 2,
   "weekStart": ""
 }

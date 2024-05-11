@@ -227,11 +227,9 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "editorMode": "code",
           "expr": "sum(dragonfly_scheduler_traffic{}) by (type)",
           "interval": "60",
           "legendFormat": "{{type}}",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -575,7 +573,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -606,7 +604,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_traffic{type=\"REMOTE_PEER\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_traffic{type=\"REMOTE_PEER\"}[$interval]))",
           "forceInterval": false,
           "instant": false,
           "interval": "60",
@@ -674,7 +672,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -705,7 +703,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_traffic{type=\"BACK_TO_SOURCE\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_traffic{type=\"BACK_TO_SOURCE\"}[$interval]))",
           "forceInterval": false,
           "instant": false,
           "interval": "60",
@@ -773,7 +771,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -804,7 +802,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_host_traffic{type=\"download\"}[1d]))",
+          "expr": "sum(rate(dragonfly_scheduler_host_traffic{type=\"download\"}[1d]))",
           "forceInterval": false,
           "instant": false,
           "interval": "60",
@@ -871,7 +869,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -902,7 +900,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_host_traffic{type=\"upload\"}[1d]))",
+          "expr": "sum(rate(dragonfly_scheduler_host_traffic{type=\"upload\"}[1d]))",
           "instant": false,
           "interval": "60",
           "legendFormat": "",
@@ -1000,7 +998,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_concurrent_schedule_total{}[$interval])) by (instance)",
+          "expr": "sum(dragonfly_scheduler_concurrent_schedule_total{}) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -3301,7 +3299,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_host_traffic{type=\"download\"}[1m])) by (host_ip)",
+          "expr": "sum(rate(dragonfly_scheduler_host_traffic{type=\"download\"}[1m])) by (host_ip)",
           "hide": false,
           "interval": "60",
           "legendFormat": "{{host_ip}}",
@@ -3400,7 +3398,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_host_traffic{type=\"upload\"}[1m])) by (host_ip)",
+          "expr": "sum(rate(dragonfly_scheduler_host_traffic{type=\"upload\"}[1m])) by (host_ip)",
           "hide": false,
           "interval": "60",
           "legendFormat": "{{host_ip}}",
@@ -3502,7 +3500,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"OK\"}[$interval])) + \nsum(irate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"NotFound\"}[$interval])) + \nsum(irate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\"}[$interval])) + \nsum(irate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\"}[$interval])))\n/ \nsum(irate(grpc_server_started_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\"}[$interval]))",
+          "expr": "(sum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"OK\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"NotFound\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\"}[$interval])))\n/ \nsum(rate(grpc_server_started_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -3584,11 +3582,13 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum(irate(grpc_server_started_total{grpc_service=\"scheduler.Scheduler\"}[$interval]))",
+          "editorMode": "code",
+          "expr": "sum(rate(grpc_server_started_total{grpc_service=\"scheduler.Scheduler\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -3705,7 +3705,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\"}[$interval])) by (grpc_code, grpc_method)",
+          "expr": "sum(rate(grpc_server_handled_total{grpc_service=\"scheduler.Scheduler\",grpc_type=\"unary\"}[$interval])) by (grpc_code, grpc_method)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -3791,7 +3791,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_download_peer_finished_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_download_peer_finished_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_scheduler_download_peer_finished_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_download_peer_finished_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_download_peer_finished_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_download_peer_finished_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -3874,7 +3874,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_finished_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_finished_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -3974,7 +3974,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_finished_total{}[$interval])) by (instance, host_type)",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_finished_total{}[$interval])) by (instance, host_type)",
           "hide": false,
           "interval": "60",
           "legendFormat": "{{instance}}-{{host_type}}",
@@ -4073,7 +4073,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_finished_failure_total{}[$interval])) by (instance, host_type)",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_finished_failure_total{}[$interval])) by (instance, host_type)",
           "hide": false,
           "interval": "60",
           "legendFormat": "{{instance}}-{{host_type}}",
@@ -4172,7 +4172,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_back_to_source_finished_failure_total{}[$interval])) by (instance, host_type)",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_back_to_source_finished_failure_total{}[$interval])) by (instance, host_type)",
           "hide": false,
           "interval": "60",
           "legendFormat": "{{instance}}-{{host_type}}",
@@ -4258,7 +4258,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_announce_peer_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_announce_peer_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_scheduler_announce_peer_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_announce_peer_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_announce_peer_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_announce_peer_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -4341,7 +4341,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_announce_peer_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_announce_peer_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -4441,7 +4441,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_announce_peer_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_announce_peer_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -4539,7 +4539,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_announce_peer_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_announce_peer_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -4623,7 +4623,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_register_peer_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_register_peer_failure_total{}[$interval])))\n/\nsum(irate(dragonfly_scheduler_register_peer_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_register_peer_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_register_peer_failure_total{}[$interval])))\n/\nsum(rate(dragonfly_scheduler_register_peer_total{}[$interval]))",
           "format": "time_series",
           "instant": false,
           "interval": "60",
@@ -4706,7 +4706,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_register_peer_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_register_peer_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -4806,7 +4806,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_register_peer_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_register_peer_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -5071,7 +5071,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_started_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_started_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -5171,7 +5171,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_started_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_started_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -5269,7 +5269,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_started_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_started_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -5353,7 +5353,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_download_peer_back_to_source_started_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_download_peer_back_to_source_started_failure_total{}[$interval])))\n/\nsum(irate(dragonfly_scheduler_download_peer_back_to_source_started_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_download_peer_back_to_source_started_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_download_peer_back_to_source_started_failure_total{}[$interval])))\n/\nsum(rate(dragonfly_scheduler_download_peer_back_to_source_started_total{}[$interval]))",
           "format": "time_series",
           "instant": false,
           "interval": "60",
@@ -5436,7 +5436,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_back_to_source_started_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_back_to_source_started_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -5536,7 +5536,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_back_to_source_started_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_back_to_source_started_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -5634,7 +5634,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_peer_back_to_source_started_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_download_peer_back_to_source_started_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -5719,7 +5719,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_download_piece_finished_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_download_piece_finished_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_scheduler_download_piece_finished_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_download_piece_finished_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_download_piece_finished_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_download_piece_finished_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -5802,7 +5802,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_download_piece_finished_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_download_piece_finished_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -5902,7 +5902,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_piece_finished_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_download_piece_finished_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -6000,7 +6000,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_piece_finished_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_download_piece_finished_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -6098,7 +6098,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_download_piece_back_to_source_finished_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_download_piece_back_to_source_finished_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -6183,7 +6183,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_stat_peer_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_stat_peer_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_scheduler_stat_peer_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_stat_peer_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_stat_peer_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_stat_peer_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -6266,7 +6266,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_stat_peer_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_stat_peer_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -6366,7 +6366,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_stat_peer_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_stat_peer_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -6464,7 +6464,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_stat_peer_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_stat_peer_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -6549,7 +6549,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_leave_peer_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_leave_peer_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_scheduler_leave_peer_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_leave_peer_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_leave_peer_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_leave_peer_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -6632,7 +6632,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_leave_peer_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_leave_peer_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -6732,7 +6732,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_leave_peer_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_leave_peer_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -6830,7 +6830,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_leave_peer_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_leave_peer_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -6915,7 +6915,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_stat_task_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_stat_task_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_scheduler_stat_task_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_stat_task_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_stat_task_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_stat_task_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -6997,11 +6997,13 @@
             "type": "prometheus",
             "uid": "${DS_PROMETHEUS}"
           },
-          "expr": "sum(irate(dragonfly_scheduler_stat_task_total{}[$interval]))",
+          "editorMode": "code",
+          "expr": "sum(rate(dragonfly_scheduler_stat_task_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -7096,7 +7098,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_stat_task_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_stat_task_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -7194,7 +7196,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_stat_task_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_stat_task_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -7279,7 +7281,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_announce_host_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_announce_host_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_scheduler_announce_host_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_announce_host_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_announce_host_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_announce_host_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -7362,7 +7364,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_announce_host_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_announce_host_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -7462,7 +7464,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_announce_host_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_announce_host_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -7560,7 +7562,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_announce_host_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_announce_host_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -7645,7 +7647,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "(sum(irate(dragonfly_scheduler_leave_host_total{}[$interval])) -\nsum(irate(dragonfly_scheduler_leave_host_failure_total{}[$interval])))\n/ \nsum(irate(dragonfly_scheduler_leave_host_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_scheduler_leave_host_total{}[$interval])) -\nsum(rate(dragonfly_scheduler_leave_host_failure_total{}[$interval])))\n/ \nsum(rate(dragonfly_scheduler_leave_host_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -7728,7 +7730,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "sum(irate(dragonfly_scheduler_leave_host_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_scheduler_leave_host_total{}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -7828,7 +7830,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_leave_host_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_leave_host_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -7926,7 +7928,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(irate(dragonfly_scheduler_leave_host_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_scheduler_leave_host_failure_total{}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -8202,8 +8204,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -8330,8 +8331,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -8546,6 +8546,6 @@
   "timezone": "",
   "title": "Scheduler",
   "uid": "lj4R659nk",
-  "version": 27,
+  "version": 4,
   "weekStart": ""
 }
