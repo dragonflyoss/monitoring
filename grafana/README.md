@@ -1,6 +1,6 @@
 # Grafana
 
-Grafana dashboard including manager, scheduler and peer.
+Grafana dashboard including manager, scheduler, client and seed client.
 
 ## Grafana Develop Guide
 
