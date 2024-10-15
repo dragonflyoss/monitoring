@@ -1,53 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "Prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": {},
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "bargauge",
-      "name": "Bar gauge",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "10.4.1"
-    },
-    {
-      "type": "panel",
-      "id": "piechart",
-      "name": "Pie chart",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "timeseries",
-      "name": "Time series",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -75,7 +26,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 21054,
   "graphTooltip": 0,
-  "id": null,
+  "id": 31,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -98,8 +49,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -155,10 +107,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_version{container=\"seed-client\"}) by (git_version, git_commit)",
+          "expr": "sum(dragonfly_client_version{container=\"seed-client\",namespace=~\"$namespace\"}) by (git_version, git_commit)",
           "interval": "60",
           "legendFormat": "{{git_version}}-{{git_commit}}",
           "range": true,
@@ -170,8 +122,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -227,10 +180,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_download_traffic{container=\"seed-client\"}) by (type)",
+          "expr": "sum(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}) by (type)",
           "interval": "60",
           "legendFormat": "{{type}}",
           "range": true,
@@ -242,8 +195,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -299,10 +253,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_upload_traffic{container=\"seed-client\"})",
+          "expr": "sum(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"})",
           "interval": "60",
           "legendFormat": "total",
           "range": true,
@@ -314,8 +268,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -371,10 +326,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_download_task_total{container=\"seed-client\"}) by (tag, app, priority)",
+          "expr": "sum(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}) by (tag, app, priority)",
           "interval": "60",
           "legendFormat": "{{tag}}-{{app}}-{{priority}}",
           "range": true,
@@ -386,8 +341,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -443,10 +399,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_download_task_total{container=\"seed-client\"}) by (type)",
+          "expr": "sum(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}) by (type)",
           "interval": "60",
           "legendFormat": "{{type}}",
           "range": true,
@@ -458,8 +414,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -515,10 +472,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_prefetch_task_total{container=\"seed-client\"}) by (tag, app, priority)",
+          "expr": "sum(dragonfly_client_prefetch_task_total{container=\"seed-client\",namespace=~\"$namespace\"}) by (tag, app, priority)",
           "interval": "60",
           "legendFormat": "{{tag}}-{{app}}-{{priority}}",
           "range": true,
@@ -530,8 +487,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -545,6 +503,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -612,11 +571,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{container=\"seed-client\"}[$interval])) by (type)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (type)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -632,8 +591,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -647,6 +607,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -714,11 +675,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -734,8 +695,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -749,6 +711,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -816,11 +779,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\",container=\"seed-client\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -836,8 +799,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -851,6 +815,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -918,11 +883,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\",container=\"seed-client\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -938,8 +903,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -953,6 +919,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1020,11 +987,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\",container=\"seed-client\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1040,8 +1007,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1055,6 +1023,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1122,11 +1091,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1142,8 +1111,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1157,6 +1127,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1224,11 +1195,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(dragonfly_client_concurrent_download_task_total{container=\"seed-client\"})",
+          "expr": "sum(dragonfly_client_concurrent_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"})",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1243,6 +1214,288 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 95
+              },
+              {
+                "color": "red",
+                "value": 99
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 45
+      },
+      "id": 104,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "(sum(rate(dragonfly_client_backend_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_client_backend_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(dragonfly_client_backend_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Backend Request Success Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#1f78c1",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 18,
+        "x": 6,
+        "y": 45
+      },
+      "id": 106,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(dragonfly_client_backend_request_duration_milliseconds_count{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Backend Request QPS",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 49
+      },
+      "id": 105,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "histogram_quantile(\n  0.99,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$interval]\n    )\n  ) \n)",
+          "instant": false,
+          "legendFormat": "P99",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "histogram_quantile(\n  0.95,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$interval]\n    )\n  ) \n)",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "p95",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "histogram_quantile(\n  0.5,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$interval]\n    )\n  ) \n)",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "P50",
+          "range": true,
+          "refId": "C"
+        }
+      ],
+      "title": "Backend Request Duration",
+      "type": "timeseries"
+    },
+    {
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
@@ -1252,7 +1505,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 57
       },
       "id": 48,
       "panels": [],
@@ -1261,8 +1514,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1305,7 +1559,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 46
+        "y": 58
       },
       "id": 59,
       "maxDataPoints": 100,
@@ -1314,6 +1568,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -1325,16 +1580,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "(sum(rate(dragonfly_client_download_task_total{container=\"seed-client\"}[$interval])) -\nsum(rate(dragonfly_client_download_task_failure_total{container=\"seed-client\"}[$interval])))\n/ \nsum(rate(dragonfly_client_download_task_total{container=\"seed-client\"}[$interval]))",
+          "expr": "(sum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_client_download_task_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1348,8 +1603,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1389,7 +1645,7 @@
         "h": 4,
         "w": 18,
         "x": 6,
-        "y": 46
+        "y": 58
       },
       "id": 60,
       "maxDataPoints": 100,
@@ -1398,6 +1654,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -1409,16 +1666,16 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_task_total{container=\"seed-client\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1432,8 +1689,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1447,6 +1705,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1494,7 +1753,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 62
       },
       "id": 61,
       "options": {
@@ -1514,11 +1773,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(dragonfly_client_download_task_total{container=\"seed-client\"}[$interval])",
+          "expr": "rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1534,8 +1793,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1549,6 +1809,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1596,7 +1857,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 62
       },
       "id": 97,
       "options": {
@@ -1616,11 +1877,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(dragonfly_client_download_task_failure_total{container=\"seed-client\"}[$interval])",
+          "expr": "rate(dragonfly_client_download_task_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1640,7 +1901,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 58
+        "y": 70
       },
       "id": 75,
       "panels": [],
@@ -1649,8 +1910,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1664,6 +1926,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1714,7 +1977,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 59
+        "y": 71
       },
       "id": 76,
       "options": {
@@ -1734,11 +1997,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -1748,10 +2011,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -1761,10 +2024,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -1777,8 +2040,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1792,6 +2056,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1842,7 +2107,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 59
+        "y": 71
       },
       "id": 78,
       "options": {
@@ -1862,11 +2127,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -1876,10 +2141,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -1889,10 +2154,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -1906,7 +2171,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1920,6 +2185,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1970,7 +2236,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 66
+        "y": 78
       },
       "id": 79,
       "options": {
@@ -1990,7 +2256,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -2004,7 +2270,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$interval])) by (le))",
@@ -2017,7 +2283,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$interval])) by (le))",
@@ -2033,8 +2299,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2048,6 +2315,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -2098,7 +2366,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 66
+        "y": 78
       },
       "id": 80,
       "options": {
@@ -2118,11 +2386,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2132,10 +2400,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2145,10 +2413,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2161,8 +2429,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2176,6 +2445,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -2226,7 +2496,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 73
+        "y": 85
       },
       "id": 81,
       "options": {
@@ -2246,11 +2516,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2260,10 +2530,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2273,10 +2543,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2289,8 +2559,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2304,6 +2575,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -2354,7 +2626,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 73
+        "y": 85
       },
       "id": 82,
       "options": {
@@ -2374,11 +2646,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2388,10 +2660,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2401,10 +2673,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2417,8 +2689,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2432,6 +2705,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -2482,7 +2756,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 80
+        "y": 92
       },
       "id": 83,
       "options": {
@@ -2502,11 +2776,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2516,10 +2790,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2529,10 +2803,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2545,8 +2819,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2560,6 +2835,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -2610,7 +2886,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 80
+        "y": 92
       },
       "id": 84,
       "options": {
@@ -2630,11 +2906,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2644,10 +2920,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2657,10 +2933,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2673,8 +2949,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2688,6 +2965,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -2738,7 +3016,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 87
+        "y": 99
       },
       "id": 85,
       "options": {
@@ -2758,11 +3036,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2772,10 +3050,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2785,10 +3063,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2801,8 +3079,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2816,6 +3095,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -2866,7 +3146,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 87
+        "y": 99
       },
       "id": 86,
       "options": {
@@ -2886,11 +3166,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2900,10 +3180,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2913,10 +3193,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2929,8 +3209,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -2944,6 +3225,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -2994,7 +3276,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 94
+        "y": 106
       },
       "id": 87,
       "options": {
@@ -3014,11 +3296,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3028,10 +3310,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3041,10 +3323,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3057,8 +3339,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3072,6 +3355,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -3122,7 +3406,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 94
+        "y": 106
       },
       "id": 88,
       "options": {
@@ -3142,11 +3426,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3156,10 +3440,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3169,10 +3453,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3185,8 +3469,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3200,6 +3485,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -3250,7 +3536,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 101
+        "y": 113
       },
       "id": 89,
       "options": {
@@ -3270,11 +3556,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3284,10 +3570,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3297,10 +3583,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3313,8 +3599,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3328,6 +3615,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -3378,7 +3666,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 101
+        "y": 113
       },
       "id": 90,
       "options": {
@@ -3398,11 +3686,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3412,10 +3700,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3425,10 +3713,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3441,8 +3729,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3456,6 +3745,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -3506,7 +3796,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 108
+        "y": 120
       },
       "id": 91,
       "options": {
@@ -3526,11 +3816,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3540,10 +3830,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3553,10 +3843,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3569,8 +3859,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3584,6 +3875,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -3634,7 +3926,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 108
+        "y": 120
       },
       "id": 92,
       "options": {
@@ -3654,11 +3946,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3668,10 +3960,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3681,10 +3973,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3697,8 +3989,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3712,6 +4005,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -3762,7 +4056,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 115
+        "y": 127
       },
       "id": 93,
       "options": {
@@ -3782,11 +4076,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3796,10 +4090,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3809,10 +4103,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3825,8 +4119,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3840,6 +4135,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -3890,7 +4186,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 115
+        "y": 127
       },
       "id": 94,
       "options": {
@@ -3910,11 +4206,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3924,10 +4220,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3937,10 +4233,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3953,8 +4249,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -3968,6 +4265,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -4018,7 +4316,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 122
+        "y": 134
       },
       "id": 95,
       "options": {
@@ -4038,11 +4336,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4052,10 +4350,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4065,10 +4363,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4081,8 +4379,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -4096,6 +4395,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -4146,7 +4446,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 122
+        "y": 134
       },
       "id": 96,
       "options": {
@@ -4166,11 +4466,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4180,10 +4480,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4193,10 +4493,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4213,7 +4513,180 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 129
+        "y": 141
+      },
+      "id": 107,
+      "panels": [],
+      "title": "Disk",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 0,
+        "y": 142
+      },
+      "id": 108,
+      "options": {
+        "displayLabels": [
+          "percent"
+        ],
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "values": [
+            "value"
+          ]
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"})/\nsum(dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"})",
+          "instant": false,
+          "legendFormat": "Used Space",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "(sum(dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}) -\nsum(dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"}))/ \nsum(dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"})",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Unused Space",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Disk Usage Space Total",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 1,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.9
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 20,
+        "x": 4,
+        "y": 142
+      },
+      "id": 109,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"} /\ndragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
+          "instant": true,
+          "legendFormat": "{{instance}}-{{container}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Disk Usage Space(Instance)",
+      "type": "bargauge"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 151
       },
       "id": 101,
       "panels": [],
@@ -4222,8 +4695,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -4246,7 +4720,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 130
+        "y": 152
       },
       "id": 102,
       "options": {
@@ -4267,16 +4741,16 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, sum(increase(dragonfly_client_download_traffic{container=\"seed-client\"}[1d])) by (instance, container))",
+          "expr": "topk(10, sum(increase(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[1d])) by (instance, container))",
           "instant": true,
           "interval": "60",
           "legendFormat": "{{instance}}-{{container}}",
@@ -4288,8 +4762,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "description": "",
       "fieldConfig": {
@@ -4312,7 +4787,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 140
+        "y": 162
       },
       "id": 103,
       "options": {
@@ -4333,16 +4808,16 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, sum(increase(dragonfly_client_upload_traffic{container=\"seed-client\"}[1d])) by (instance, container))",
+          "expr": "topk(10, sum(increase(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[1d])) by (instance, container))",
           "instant": true,
           "interval": "60",
           "intervalFactor": 1,
@@ -4363,7 +4838,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 150
+        "y": 172
       },
       "id": 50,
       "panels": [],
@@ -4372,8 +4847,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -4387,6 +4863,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -4434,7 +4911,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 151
+        "y": 173
       },
       "id": 99,
       "options": {
@@ -4454,11 +4931,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(rate(process_cpu_seconds_total{container='seed-client'}[1m])) by (instance, container)",
+          "expr": "avg(rate(process_cpu_seconds_total{container='seed-client',namespace=~\"$namespace\"}[1m])) by (instance, container)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -4474,8 +4951,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -4489,6 +4967,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -4536,7 +5015,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 151
+        "y": 173
       },
       "id": 98,
       "options": {
@@ -4556,11 +5035,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "process_virtual_memory_bytes{container=\"seed-client\"}",
+          "expr": "process_virtual_memory_bytes{container=\"seed-client\",namespace=~\"$namespace\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -4573,10 +5052,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "process_resident_memory_bytes{container=\"seed-client\"}",
+          "expr": "process_resident_memory_bytes{container=\"seed-client\",namespace=~\"$namespace\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "{{instance}}-{{container}}-resident",
@@ -4589,8 +5068,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -4604,6 +5084,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -4634,7 +5115,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4650,7 +5132,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 159
+        "y": 181
       },
       "id": 62,
       "options": {
@@ -4670,11 +5152,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "process_threads{container=\"seed-client\"}",
+          "expr": "process_threads{container=\"seed-client\",namespace=~\"$namespace\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -4690,8 +5172,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -4705,6 +5188,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -4735,7 +5219,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -4751,7 +5236,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 159
+        "y": 181
       },
       "id": 100,
       "options": {
@@ -4771,11 +5256,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "process_open_fds{container=\"seed-client\"}",
+          "expr": "process_open_fds{container=\"seed-client\",namespace=~\"$namespace\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -4800,7 +5285,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "1m",
           "value": "1m"
         },
@@ -4868,6 +5353,34 @@
         "refresh": 2,
         "skipUrlSync": false,
         "type": "interval"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "cluster-a",
+          "value": "cluster-a"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(dragonfly_client_version,namespace)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "namespace",
+        "multi": false,
+        "name": "namespace",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(dragonfly_client_version,namespace)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
       }
     ]
   },
@@ -4903,6 +5416,6 @@
   "timezone": "",
   "title": "Seed Client",
   "uid": "HtXpCprnk",
-  "version": 5,
+  "version": 23,
   "weekStart": ""
 }
