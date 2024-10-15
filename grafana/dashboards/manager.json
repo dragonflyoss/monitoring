@@ -1,47 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "Prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": {},
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "10.4.1"
-    },
-    {
-      "type": "panel",
-      "id": "piechart",
-      "name": "Pie chart",
-      "version": ""
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "timeseries",
-      "name": "Time series",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -69,7 +26,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 15945,
   "graphTooltip": 0,
-  "id": null,
+  "id": 30,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -88,8 +45,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -109,8 +67,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 3,
+        "h": 9,
+        "w": 4,
         "x": 0,
         "y": 1
       },
@@ -143,10 +101,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_manager_version{}) by (git_version, git_commit)",
+          "expr": "sum(dragonfly_manager_version{namespace=~\"$namespace\"}) by (git_version, git_commit)",
           "interval": "60",
           "legendFormat": "{{git_version}}-{{git_commit}}",
           "range": true,
@@ -166,7 +124,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 10
       },
       "id": 44,
       "panels": [],
@@ -175,8 +133,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -219,7 +178,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 10
+        "y": 11
       },
       "id": 12,
       "maxDataPoints": 100,
@@ -228,6 +187,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -239,15 +199,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"OK\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"NotFound\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\"}[$interval])))\n/ \nsum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\"}[$interval]))",
+          "expr": "(sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"OK\",namespace=~\"$namespace\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"NotFound\",namespace=~\"$namespace\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\",namespace=~\"$namespace\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\",namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -261,8 +221,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -302,7 +263,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 11
       },
       "id": 14,
       "maxDataPoints": 100,
@@ -311,6 +272,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -322,15 +284,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\"}[$interval]))",
+          "expr": "sum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\",namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -344,8 +306,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -359,6 +322,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -427,7 +391,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 16
       },
       "id": 26,
       "options": {
@@ -449,10 +413,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\"}[$interval])) by (grpc_code, grpc_method)",
+          "expr": "sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",namespace=~\"$namespace\"}[$interval])) by (grpc_code, grpc_method)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -466,8 +430,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -510,7 +475,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 24
+        "y": 25
       },
       "id": 57,
       "maxDataPoints": 100,
@@ -519,6 +484,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -530,15 +496,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(sum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval])) -\nsum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{}[$interval])))\n/\nsum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval]))",
+          "expr": "(sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{namespace=~\"$namespace\"}[$interval])))\n/\nsum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "instant": false,
           "interval": "60",
@@ -552,8 +518,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -593,7 +560,7 @@
         "h": 4,
         "w": 18,
         "x": 6,
-        "y": 24
+        "y": 25
       },
       "id": 59,
       "maxDataPoints": 100,
@@ -602,6 +569,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -613,15 +581,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -635,8 +603,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -650,6 +619,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 60,
             "gradientMode": "none",
@@ -697,7 +667,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 28
+        "y": 29
       },
       "id": 61,
       "options": {
@@ -717,11 +687,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -733,8 +703,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -748,6 +719,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 60,
             "gradientMode": "none",
@@ -795,7 +767,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 28
+        "y": 29
       },
       "id": 63,
       "options": {
@@ -815,11 +787,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{namespace=~\"$namespace\"}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -839,7 +811,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 37
       },
       "id": 46,
       "panels": [],
@@ -848,8 +820,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -892,7 +865,7 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 37
+        "y": 38
       },
       "id": 36,
       "maxDataPoints": 100,
@@ -901,6 +874,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -912,15 +886,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_requests_total{code=~\"[12]..\"}[$interval]))\n/ \nsum(rate(dragonfly_manager_requests_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_manager_requests_total{code=~\"[12]..\",namespace=~\"$namespace\"}[$interval]))\n/ \nsum(rate(dragonfly_manager_requests_total{namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -934,8 +908,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -975,7 +950,7 @@
         "h": 5,
         "w": 12,
         "x": 12,
-        "y": 37
+        "y": 38
       },
       "id": 38,
       "maxDataPoints": 100,
@@ -984,6 +959,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -995,15 +971,15 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "11.2.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_requests_total{}[$interval]))",
+          "expr": "sum(rate(dragonfly_manager_requests_total{namespace=~\"$namespace\"}[$interval]))",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1017,8 +993,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1032,6 +1009,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1100,7 +1078,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 43
       },
       "id": 40,
       "options": {
@@ -1122,11 +1100,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_manager_requests_total{url!=\"/healthy/\"}[$interval])) by (code, method, url)",
+          "expr": "sum(rate(dragonfly_manager_requests_total{url!=\"/healthy/\",namespace=~\"$namespace\"}[$interval])) by (code, method, url)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1140,8 +1118,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1155,6 +1134,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 50,
             "gradientMode": "none",
@@ -1202,7 +1182,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 43
       },
       "id": 42,
       "options": {
@@ -1222,11 +1202,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(dragonfly_manager_request_duration_seconds_sum{}[$interval]) * 1000 * 1000 / increase(dragonfly_manager_request_duration_seconds_count{}[$interval])) by (instance)",
+          "expr": "sum(increase(dragonfly_manager_request_duration_seconds_sum{namespace=~\"$namespace\"}[$interval]) * 1000 * 1000 / increase(dragonfly_manager_request_duration_seconds_count{namespace=~\"$namespace\"}[$interval])) by (instance)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -1246,7 +1226,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 50
       },
       "id": 48,
       "panels": [],
@@ -1255,8 +1235,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1270,6 +1251,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1317,7 +1299,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 32,
       "options": {
@@ -1339,15 +1321,17 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "go_goroutines{container=\"manager\"}",
+          "expr": "go_goroutines{container=\"manager\",namespace=~\"$namespace\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}",
           "metric": "go_goroutines",
+          "range": true,
           "refId": "A",
           "step": 4
         }
@@ -1357,8 +1341,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1372,6 +1357,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1419,7 +1405,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 51
       },
       "id": 30,
       "options": {
@@ -1439,15 +1425,17 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "go_gc_duration_seconds{container=\"manager\"}",
+          "expr": "go_gc_duration_seconds{container=\"manager\",namespace=~\"$namespace\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-{{quantile}}",
           "metric": "go_gc_duration_seconds",
+          "range": true,
           "refId": "A",
           "step": 4
         }
@@ -1457,8 +1445,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1472,6 +1461,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1532,7 +1522,7 @@
         "h": 6,
         "w": 12,
         "x": 0,
-        "y": 58
+        "y": 59
       },
       "id": 28,
       "options": {
@@ -1552,30 +1542,34 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "process_resident_memory_bytes{}",
+          "expr": "process_resident_memory_bytes{namespace=~\"$namespace\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-resident",
           "metric": "process_resident_memory_bytes",
+          "range": true,
           "refId": "A",
           "step": 4
         },
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "process_virtual_memory_bytes{component=\"manager\"}",
+          "expr": "process_virtual_memory_bytes{component=\"manager\",namespace=~\"$namespace\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-virtual",
           "metric": "process_virtual_memory_bytes",
+          "range": true,
           "refId": "B",
           "step": 4
         }
@@ -1585,8 +1579,9 @@
     },
     {
       "datasource": {
+        "default": true,
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -1600,6 +1595,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1660,7 +1656,7 @@
         "h": 6,
         "w": 12,
         "x": 12,
-        "y": 58
+        "y": 59
       },
       "id": 34,
       "options": {
@@ -1680,56 +1676,64 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "go_memstats_alloc_bytes{container=\"scheduler\"}",
+          "expr": "go_memstats_alloc_bytes{container=\"scheduler\",namespace=~\"$namespace\"}",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-bytes_allocated",
           "metric": "go_memstats_alloc_bytes",
+          "range": true,
           "refId": "A",
           "step": 4
         },
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "go_memstats_stack_inuse_bytes{container=\"manager\"}",
+          "expr": "go_memstats_stack_inuse_bytes{container=\"manager\",namespace=~\"$namespace\"}",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-stack_inuse",
           "metric": "go_memstats_stack_inuse_bytes",
+          "range": true,
           "refId": "C",
           "step": 4
         },
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "go_memstats_heap_inuse_bytes{container=\"manager\"}",
+          "expr": "go_memstats_heap_inuse_bytes{container=\"manager\",namespace=~\"$namespace\"}",
           "hide": false,
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-heap_inuse",
           "metric": "go_memstats_heap_inuse_bytes",
+          "range": true,
           "refId": "D",
           "step": 4
         },
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "prometheus"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(go_memstats_alloc_bytes_total{container=\"manager\"}[30s])",
+          "expr": "rate(go_memstats_alloc_bytes_total{container=\"manager\",namespace=~\"$namespace\"}[30s])",
           "hide": false,
           "interval": "",
           "legendFormat": "{{instance}}-alloc_rate",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -1747,7 +1751,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "1m",
           "value": "1m"
         },
@@ -1815,6 +1819,34 @@
         "refresh": 2,
         "skipUrlSync": false,
         "type": "interval"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "cluster-a",
+          "value": "cluster-a"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(dragonfly_manager_version,namespace)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "namespace",
+        "multi": false,
+        "name": "namespace",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(dragonfly_manager_version,namespace)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
       }
     ]
   },
@@ -1850,6 +1882,6 @@
   "timezone": "",
   "title": "Manager",
   "uid": "TL-e3c9nz",
-  "version": 2,
+  "version": 5,
   "weekStart": ""
 }
