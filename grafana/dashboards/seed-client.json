@@ -26,7 +26,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 21054,
   "graphTooltip": 0,
-  "id": 31,
+  "id": 28,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -4539,7 +4539,7 @@
             }
           },
           "mappings": [],
-          "unit": "percentunit"
+          "unit": "bytes"
         },
         "overrides": []
       },
@@ -4582,9 +4582,9 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"})/\nsum(dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"})",
+          "expr": "sum(dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"})",
           "instant": false,
-          "legendFormat": "Used Space",
+          "legendFormat": "Usage Space",
           "range": true,
           "refId": "A"
         },
@@ -4594,15 +4594,15 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(sum(dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}) -\nsum(dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"}))/ \nsum(dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"})",
+          "expr": "sum(dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}) - \nsum(dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"})",
           "hide": false,
           "instant": false,
-          "legendFormat": "Unused Space",
+          "legendFormat": "Free Space",
           "range": true,
           "refId": "B"
         }
       ],
-      "title": "Disk Usage Space Total",
+      "title": "Disk Usage Space",
       "type": "piechart"
     },
     {
@@ -4616,25 +4616,113 @@
           "color": {
             "mode": "thresholds"
           },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
           "mappings": [],
-          "max": 1,
-          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Usage Space"
+            },
+            "properties": [
+              {
+                "id": "custom.hidden"
               },
               {
-                "color": "red",
-                "value": 0.9
+                "id": "unit",
+                "value": "bytes"
               }
             ]
           },
-          "unit": "percentunit"
-        },
-        "overrides": []
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Space"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bytes"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Usage Percentage"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge",
+                  "valueDisplayMode": "text"
+                }
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 0.7
+                    },
+                    {
+                      "color": "red",
+                      "value": 0.85
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Free Space"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bytes"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 9,
@@ -4642,24 +4730,24 @@
         "x": 4,
         "y": 142
       },
-      "id": 109,
+      "id": 110,
       "options": {
-        "displayMode": "gradient",
-        "maxVizHeight": 300,
-        "minVizHeight": 16,
-        "minVizWidth": 8,
-        "namePlacement": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
           "fields": "",
-          "values": false
+          "reducer": [
+            "sum"
+          ],
+          "show": false
         },
-        "showUnfilled": true,
-        "sizing": "auto",
-        "valueMode": "color"
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "Value #A"
+          }
+        ]
       },
       "pluginVersion": "11.2.0",
       "targets": [
@@ -4670,15 +4758,103 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"} /\ndragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
+          "expr": "dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
+          "format": "table",
           "instant": true,
-          "legendFormat": "{{instance}}-{{container}}",
+          "legendFormat": "{{instance}}",
           "range": false,
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "range": false,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"} - \ndragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{instance}}",
+          "range": false,
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"} /\ndragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{instance}}",
+          "range": false,
+          "refId": "C"
         }
       ],
       "title": "Disk Usage Space(Instance)",
-      "type": "bargauge"
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "instance",
+                "Value #A",
+                "Value #B",
+                "Value #D",
+                "Value #C"
+              ]
+            }
+          }
+        },
+        {
+          "id": "merge",
+          "options": {}
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Value #A": 2,
+              "Value #B": 1,
+              "Value #C": 4,
+              "Value #D": 3,
+              "instance": 0
+            },
+            "renameByName": {
+              "Value #A": "Usage Space",
+              "Value #B": "Space",
+              "Value #C": "Usage Percentage",
+              "Value #D": "Free Space",
+              "instance": "Instance"
+            }
+          }
+        }
+      ],
+      "type": "table"
     },
     {
       "collapsed": false,
@@ -4894,8 +5070,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4998,8 +5173,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5115,8 +5289,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5219,8 +5392,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -5357,8 +5529,8 @@
       {
         "current": {
           "selected": false,
-          "text": "cluster-a",
-          "value": "cluster-a"
+          "text": "dragonfly-system",
+          "value": "dragonfly-system"
         },
         "datasource": {
           "type": "prometheus",
@@ -5416,6 +5588,6 @@
   "timezone": "",
   "title": "Seed Client",
   "uid": "HtXpCprnk",
-  "version": 23,
+  "version": 10,
   "weekStart": ""
 }
