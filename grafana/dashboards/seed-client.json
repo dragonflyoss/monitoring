@@ -4879,6 +4879,7 @@
       "fieldConfig": {
         "defaults": {
           "mappings": [],
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4946,6 +4947,7 @@
       "fieldConfig": {
         "defaults": {
           "mappings": [],
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -5588,6 +5590,6 @@
   "timezone": "",
   "title": "Seed Client",
   "uid": "HtXpCprnk",
-  "version": 10,
+  "version": 1,
   "weekStart": ""
 }
