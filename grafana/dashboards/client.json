@@ -1411,7 +1411,7 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
-            "lineWidth": 2,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -6051,6 +6051,6 @@
   "timezone": "",
   "title": "Client",
   "uid": "UtXpSprnk",
-  "version": 12,
+  "version": 13,
   "weekStart": ""
 }
