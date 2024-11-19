@@ -1263,6 +1263,471 @@
         "x": 0,
         "y": 45
       },
+      "id": 110,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "(sum(rate(dragonfly_client_proxy_request_total{namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_client_proxy_request_failure_total{namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(dragonfly_client_proxy_request_total{namespace=~\"$namespace\"}[$interval]))",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Proxy Request Success Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#1f78c1",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 18,
+        "x": 6,
+        "y": 45
+      },
+      "id": 111,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(dragonfly_client_proxy_request_total{namespace=~\"$namespace\"}[$interval]))",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Proxy Request QPS",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 49
+      },
+      "id": 112,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(dragonfly_client_proxy_request_total{namespace=~\"$namespace\"}[$interval]))",
+          "instant": false,
+          "interval": "60",
+          "legendFormat": "total",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Proxy Request",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 57
+      },
+      "id": 113,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "rate(dragonfly_client_proxy_request_total{namespace=~\"$namespace\"}[$interval])",
+          "instant": false,
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Proxy Request(instance)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 57
+      },
+      "id": 114,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "rate(dragonfly_client_proxy_request_failure_total{namespace=~\"$namespace\"}[$interval])",
+          "instant": false,
+          "interval": "60",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Proxy Request Failed(instance)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 95
+              },
+              {
+                "color": "red",
+                "value": 99
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 65
+      },
       "id": 107,
       "options": {
         "colorMode": "background",
@@ -1296,7 +1761,7 @@
           "refId": "A"
         }
       ],
-      "title": "Download Task Success Rate",
+      "title": "Backend Request Success Rate",
       "type": "stat"
     },
     {
@@ -1333,7 +1798,7 @@
         "h": 4,
         "w": 18,
         "x": 6,
-        "y": 45
+        "y": 65
       },
       "id": 108,
       "options": {
@@ -1437,7 +1902,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 69
       },
       "id": 109,
       "options": {
@@ -1505,7 +1970,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 57
+        "y": 77
       },
       "id": 48,
       "panels": [],
@@ -1559,7 +2024,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 58
+        "y": 78
       },
       "id": 59,
       "maxDataPoints": 100,
@@ -1645,7 +2110,7 @@
         "h": 4,
         "w": 18,
         "x": 6,
-        "y": 58
+        "y": 78
       },
       "id": 60,
       "maxDataPoints": 100,
@@ -1753,7 +2218,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 62
+        "y": 82
       },
       "id": 61,
       "options": {
@@ -1857,7 +2322,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 62
+        "y": 82
       },
       "id": 97,
       "options": {
@@ -1901,7 +2366,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 90
       },
       "id": 75,
       "panels": [],
@@ -1977,7 +2442,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 71
+        "y": 91
       },
       "id": 76,
       "options": {
@@ -2107,7 +2572,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 71
+        "y": 91
       },
       "id": 78,
       "options": {
@@ -2237,7 +2702,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 78
+        "y": 98
       },
       "id": 79,
       "options": {
@@ -2367,7 +2832,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 78
+        "y": 98
       },
       "id": 80,
       "options": {
@@ -2497,7 +2962,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 85
+        "y": 105
       },
       "id": 81,
       "options": {
@@ -2627,7 +3092,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 85
+        "y": 105
       },
       "id": 82,
       "options": {
@@ -2757,7 +3222,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 92
+        "y": 112
       },
       "id": 83,
       "options": {
@@ -2887,7 +3352,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 92
+        "y": 112
       },
       "id": 84,
       "options": {
@@ -3017,7 +3482,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 99
+        "y": 119
       },
       "id": 85,
       "options": {
@@ -3147,7 +3612,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 99
+        "y": 119
       },
       "id": 86,
       "options": {
@@ -3277,7 +3742,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 106
+        "y": 126
       },
       "id": 87,
       "options": {
@@ -3407,7 +3872,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 106
+        "y": 126
       },
       "id": 88,
       "options": {
@@ -3537,7 +4002,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 113
+        "y": 133
       },
       "id": 89,
       "options": {
@@ -3667,7 +4132,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 113
+        "y": 133
       },
       "id": 90,
       "options": {
@@ -3797,7 +4262,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 120
+        "y": 140
       },
       "id": 91,
       "options": {
@@ -3927,7 +4392,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 120
+        "y": 140
       },
       "id": 92,
       "options": {
@@ -4057,7 +4522,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 127
+        "y": 147
       },
       "id": 93,
       "options": {
@@ -4187,7 +4652,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 127
+        "y": 147
       },
       "id": 94,
       "options": {
@@ -4317,7 +4782,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 134
+        "y": 154
       },
       "id": 95,
       "options": {
@@ -4447,7 +4912,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 134
+        "y": 154
       },
       "id": 96,
       "options": {
@@ -4514,7 +4979,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 141
+        "y": 161
       },
       "id": 106,
       "panels": [],
@@ -4548,7 +5013,7 @@
         "h": 9,
         "w": 4,
         "x": 0,
-        "y": 142
+        "y": 162
       },
       "id": 105,
       "options": {
@@ -4583,7 +5048,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\"})",
+          "expr": "topk(10,sum(dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\",container=\"client\"}))",
           "instant": false,
           "legendFormat": "Usage Space",
           "range": true,
@@ -4595,7 +5060,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_disk_space_total{namespace=~\"$namespace\"}) -\nsum(dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\"})",
+          "expr": "topk(10,sum(dragonfly_client_disk_space_total{namespace=~\"$namespace\",container=\"client\"}-\ndragonfly_client_disk_usage_space_total{namespace=~\"$namespace\",container=\"client\"}))",
           "hide": false,
           "instant": false,
           "legendFormat": "Free Space",
@@ -4603,7 +5068,7 @@
           "refId": "B"
         }
       ],
-      "title": "Disk Usage Space",
+      "title": "Disk Usage Space Total",
       "type": "piechart"
     },
     {
@@ -4618,22 +5083,29 @@
             "mode": "thresholds"
           },
           "custom": {
-            "align": "center",
+            "align": "auto",
             "cellOptions": {
               "type": "auto"
             },
             "inspect": false
           },
           "mappings": [],
+          "max": 1,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
+              },
+              {
+                "color": "red",
+                "value": 0.9
               }
             ]
-          }
+          },
+          "unit": "percentunit"
         },
         "overrides": [
           {
@@ -4683,18 +5155,20 @@
                 "value": "percentunit"
               },
               {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "gauge",
+                  "valueDisplayMode": "color"
+                }
+              },
+              {
                 "id": "min",
                 "value": 0
               },
               {
                 "id": "max",
                 "value": 1
-              },
-              {
-                "id": "custom.cellOptions",
-                "value": {
-                  "type": "gauge"
-                }
               },
               {
                 "id": "thresholds",
@@ -4707,11 +5181,11 @@
                     },
                     {
                       "color": "#EAB839",
-                      "value": 0.7
+                      "value": 0.85
                     },
                     {
                       "color": "red",
-                      "value": 0.85
+                      "value": 0.95
                     }
                   ]
                 }
@@ -4724,7 +5198,7 @@
         "h": 9,
         "w": 20,
         "x": 4,
-        "y": 142
+        "y": 162
       },
       "id": 104,
       "options": {
@@ -4737,8 +5211,7 @@
           ],
           "show": false
         },
-        "showHeader": true,
-        "sortBy": []
+        "showHeader": true
       },
       "pluginVersion": "11.2.0",
       "targets": [
@@ -4749,7 +5222,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10,dragonfly_client_disk_space_total{namespace=~\"$namespace\"})",
+          "expr": "topk(10,dragonfly_client_disk_space_total{namespace=~\"$namespace\",container=\"client\"})",
           "format": "table",
           "instant": true,
           "legendFormat": "{{instance}}",
@@ -4763,7 +5236,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10,dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\"})",
+          "expr": "topk(10,dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\",container=\"client\"})",
           "format": "table",
           "hide": false,
           "instant": true,
@@ -4776,38 +5249,30 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "disableTextWrap": false,
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, dragonfly_client_disk_space_total{namespace=~\"$namespace\"}) - topk(10, dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\"})",
+          "expr": "topk(10,dragonfly_client_disk_space_total{namespace=~\"$namespace\",container=\"client\"} - dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\"})",
           "format": "table",
-          "fullMetaSearch": false,
           "hide": false,
-          "includeNullMetadata": true,
           "instant": true,
           "legendFormat": "{{instance}}",
           "range": false,
-          "refId": "C",
-          "useBackend": false
+          "refId": "C"
         },
         {
           "datasource": {
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "disableTextWrap": false,
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\"}) / topk(10, dragonfly_client_disk_space_total{namespace=~\"$namespace\"})",
+          "expr": "topk(10,dragonfly_client_disk_usage_space_total{namespace=~\"$namespace\",container=\"client\"} /\ndragonfly_client_disk_space_total{namespace=~\"$namespace\",container=\"client\"})",
           "format": "table",
-          "fullMetaSearch": false,
           "hide": false,
-          "includeNullMetadata": true,
           "instant": true,
           "legendFormat": "{{instance}}",
           "range": false,
-          "refId": "D",
-          "useBackend": false
+          "refId": "D"
         }
       ],
       "title": "Disk Usage Space Top 10",
@@ -4817,11 +5282,11 @@
           "options": {
             "include": {
               "names": [
+                "instance",
                 "Value #A",
                 "Value #B",
                 "Value #C",
-                "Value #D",
-                "instance"
+                "Value #D"
               ]
             }
           }
@@ -4841,7 +5306,7 @@
               "Value #B": "Usage Space",
               "Value #C": "Free Space",
               "Value #D": "Usage Percentage",
-              "instance": "Instance"
+              "instance": ""
             }
           }
         }
@@ -4854,7 +5319,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 151
+        "y": 171
       },
       "id": 101,
       "panels": [],
@@ -4889,7 +5354,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 152
+        "y": 172
       },
       "id": 102,
       "options": {
@@ -4957,7 +5422,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 162
+        "y": 182
       },
       "id": 103,
       "options": {
@@ -5008,7 +5473,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 172
+        "y": 192
       },
       "id": 50,
       "panels": [],
@@ -5081,7 +5546,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 173
+        "y": 193
       },
       "id": 99,
       "options": {
@@ -5185,7 +5650,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 173
+        "y": 193
       },
       "id": 98,
       "options": {
@@ -5285,7 +5750,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -5301,7 +5767,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 181
+        "y": 201
       },
       "id": 62,
       "options": {
@@ -5388,7 +5854,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -5404,7 +5871,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 181
+        "y": 201
       },
       "id": 100,
       "options": {
@@ -5584,6 +6051,6 @@
   "timezone": "",
   "title": "Client",
   "uid": "UtXpSprnk",
-  "version": 3,
+  "version": 12,
   "weekStart": ""
 }
