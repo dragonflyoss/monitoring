@@ -514,7 +514,7 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
-            "lineWidth": 2,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -617,8 +617,8 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -722,7 +722,7 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
-            "lineWidth": 2,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -826,7 +826,7 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
-            "lineWidth": 2,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -930,7 +930,7 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
-            "lineWidth": 2,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -1033,8 +1033,8 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 2,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -1138,7 +1138,7 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
-            "lineWidth": 2,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -1417,7 +1417,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -1516,7 +1516,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -1614,7 +1614,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -1871,7 +1871,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -1961,7 +1961,7 @@
       "type": "timeseries"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": {
         "type": "prometheus",
         "uid": "prometheus"
@@ -1973,393 +1973,392 @@
         "y": 77
       },
       "id": 48,
-      "panels": [
-        {
-          "datasource": {
-            "default": true,
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "thresholds"
-              },
-              "mappings": [
-                {
-                  "options": {
-                    "match": "null",
-                    "result": {
-                      "text": "N/A"
-                    }
-                  },
-                  "type": "special"
-                }
-              ],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "#299c46",
-                    "value": null
-                  },
-                  {
-                    "color": "rgba(237, 129, 40, 0.89)",
-                    "value": 95
-                  },
-                  {
-                    "color": "#d44a3a",
-                    "value": 99
-                  }
-                ]
-              },
-              "unit": "percentunit"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 4,
-            "w": 6,
-            "x": 0,
-            "y": 2
-          },
-          "id": 59,
-          "maxDataPoints": 100,
-          "options": {
-            "colorMode": "background",
-            "graphMode": "area",
-            "justifyMode": "auto",
-            "orientation": "horizontal",
-            "percentChangeColorMode": "standard",
-            "reduceOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "showPercentChange": false,
-            "textMode": "auto",
-            "wideLayout": true
-          },
-          "pluginVersion": "11.2.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "prometheus"
-              },
-              "editorMode": "code",
-              "exemplar": true,
-              "expr": "(sum(rate(dragonfly_client_download_task_total{namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_client_download_task_failure_total{namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(dragonfly_client_download_task_total{namespace=~\"$namespace\"}[$interval]))",
-              "format": "time_series",
-              "interval": "60",
-              "intervalFactor": 1,
-              "legendFormat": "",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Download Task Success Rate",
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "default": true,
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "fixedColor": "rgb(31, 120, 193)",
-                "mode": "fixed"
-              },
-              "mappings": [
-                {
-                  "options": {
-                    "match": "null",
-                    "result": {
-                      "text": "N/A"
-                    }
-                  },
-                  "type": "special"
-                }
-              ],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "ops"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 4,
-            "w": 18,
-            "x": 6,
-            "y": 2
-          },
-          "id": 60,
-          "maxDataPoints": 100,
-          "options": {
-            "colorMode": "none",
-            "graphMode": "area",
-            "justifyMode": "auto",
-            "orientation": "horizontal",
-            "percentChangeColorMode": "standard",
-            "reduceOptions": {
-              "calcs": [
-                "mean"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "showPercentChange": false,
-            "textMode": "auto",
-            "wideLayout": true
-          },
-          "pluginVersion": "11.2.0",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "prometheus"
-              },
-              "editorMode": "code",
-              "exemplar": true,
-              "expr": "sum(rate(dragonfly_client_download_task_total{namespace=~\"$namespace\"}[$interval]))",
-              "format": "time_series",
-              "interval": "60",
-              "intervalFactor": 1,
-              "legendFormat": "",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Download Task QPS",
-          "type": "stat"
-        },
-        {
-          "datasource": {
-            "default": true,
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 2,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 6
-          },
-          "id": 61,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "prometheus"
-              },
-              "editorMode": "code",
-              "exemplar": true,
-              "expr": "rate(dragonfly_client_download_task_total{namespace=~\"$namespace\"}[$interval])",
-              "format": "time_series",
-              "interval": "60",
-              "intervalFactor": 2,
-              "legendFormat": "{{instance}}-{{container}}",
-              "metric": "go_gc_duration_seconds",
-              "range": true,
-              "refId": "A",
-              "step": 4
-            }
-          ],
-          "title": "Download Task",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "default": true,
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 2,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 6
-          },
-          "id": 97,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.1",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "prometheus"
-              },
-              "editorMode": "code",
-              "exemplar": true,
-              "expr": "rate(dragonfly_client_download_task_failure_total{namespace=~\"$namespace\"}[$interval])",
-              "format": "time_series",
-              "interval": "60",
-              "intervalFactor": 2,
-              "legendFormat": "{{instance}}-{{container}}",
-              "metric": "go_gc_duration_seconds",
-              "range": true,
-              "refId": "A",
-              "step": 4
-            }
-          ],
-          "title": "Download Task Failed",
-          "type": "timeseries"
-        }
-      ],
+      "panels": [],
       "title": "GRPC",
       "type": "row"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 95
+              },
+              {
+                "color": "#d44a3a",
+                "value": 99
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 78
+      },
+      "id": 59,
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "(sum(rate(dragonfly_client_download_task_total{namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_client_download_task_failure_total{namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(dragonfly_client_download_task_total{namespace=~\"$namespace\"}[$interval]))",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Download Task Success Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "rgb(31, 120, 193)",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 18,
+        "x": 6,
+        "y": 78
+      },
+      "id": 60,
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.2.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(rate(dragonfly_client_download_task_total{namespace=~\"$namespace\"}[$interval]))",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Download Task QPS",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 82
+      },
+      "id": 61,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "rate(dragonfly_client_download_task_total{namespace=~\"$namespace\"}[$interval])",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}-{{container}}",
+          "metric": "go_gc_duration_seconds",
+          "range": true,
+          "refId": "A",
+          "step": 4
+        }
+      ],
+      "title": "Download Task",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 82
+      },
+      "id": 97,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "rate(dragonfly_client_download_task_failure_total{namespace=~\"$namespace\"}[$interval])",
+          "format": "time_series",
+          "interval": "60",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}-{{container}}",
+          "metric": "go_gc_duration_seconds",
+          "range": true,
+          "refId": "A",
+          "step": 4
+        }
+      ],
+      "title": "Download Task Failed",
+      "type": "timeseries"
     },
     {
       "collapsed": false,
@@ -2367,7 +2366,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 78
+        "y": 90
       },
       "id": 75,
       "panels": [],
@@ -2412,7 +2411,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -2443,7 +2442,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 79
+        "y": 91
       },
       "id": 76,
       "options": {
@@ -2542,7 +2541,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -2573,7 +2572,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 79
+        "y": 91
       },
       "id": 78,
       "options": {
@@ -2672,7 +2671,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -2703,7 +2702,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 86
+        "y": 98
       },
       "id": 79,
       "options": {
@@ -2802,7 +2801,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -2833,7 +2832,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 86
+        "y": 98
       },
       "id": 80,
       "options": {
@@ -2932,7 +2931,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -2963,7 +2962,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 93
+        "y": 105
       },
       "id": 81,
       "options": {
@@ -3062,7 +3061,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -3093,7 +3092,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 93
+        "y": 105
       },
       "id": 82,
       "options": {
@@ -3192,7 +3191,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -3223,7 +3222,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 100
+        "y": 112
       },
       "id": 83,
       "options": {
@@ -3322,7 +3321,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -3353,7 +3352,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 100
+        "y": 112
       },
       "id": 84,
       "options": {
@@ -3452,7 +3451,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -3483,7 +3482,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 107
+        "y": 119
       },
       "id": 85,
       "options": {
@@ -3582,7 +3581,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -3613,7 +3612,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 107
+        "y": 119
       },
       "id": 86,
       "options": {
@@ -3712,7 +3711,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -3743,7 +3742,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 114
+        "y": 126
       },
       "id": 87,
       "options": {
@@ -3842,7 +3841,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -3873,7 +3872,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 114
+        "y": 126
       },
       "id": 88,
       "options": {
@@ -3972,7 +3971,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -4003,7 +4002,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 121
+        "y": 133
       },
       "id": 89,
       "options": {
@@ -4102,7 +4101,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -4133,7 +4132,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 121
+        "y": 133
       },
       "id": 90,
       "options": {
@@ -4263,7 +4262,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 128
+        "y": 140
       },
       "id": 91,
       "options": {
@@ -4393,7 +4392,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 128
+        "y": 140
       },
       "id": 92,
       "options": {
@@ -4492,7 +4491,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -4523,7 +4522,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 135
+        "y": 147
       },
       "id": 93,
       "options": {
@@ -4622,7 +4621,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -4653,7 +4652,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 135
+        "y": 147
       },
       "id": 94,
       "options": {
@@ -4742,7 +4741,7 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
+            "lineInterpolation": "smooth",
             "lineStyle": {
               "fill": "solid"
             },
@@ -4752,7 +4751,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -4783,7 +4782,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 142
+        "y": 154
       },
       "id": 95,
       "options": {
@@ -4882,7 +4881,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -4913,7 +4912,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 142
+        "y": 154
       },
       "id": 96,
       "options": {
@@ -4980,7 +4979,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 149
+        "y": 161
       },
       "id": 106,
       "panels": [],
@@ -5014,7 +5013,7 @@
         "h": 9,
         "w": 4,
         "x": 0,
-        "y": 150
+        "y": 162
       },
       "id": 105,
       "options": {
@@ -5199,7 +5198,7 @@
         "h": 9,
         "w": 20,
         "x": 4,
-        "y": 150
+        "y": 162
       },
       "id": 104,
       "options": {
@@ -5342,7 +5341,7 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
+            "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -5380,7 +5379,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 159
+        "y": 171
       },
       "id": 116,
       "options": {
@@ -5402,9 +5401,9 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(dragonfly_client_disk_written_bytes{namespace=~\"$namespace\",container=\"client\"})",
+          "expr": "dragonfly_client_disk_written_bytes{namespace=~\"$namespace\",container=\"client\"}",
           "instant": false,
-          "legendFormat": "total",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -5478,7 +5477,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 159
+        "y": 171
       },
       "id": 115,
       "options": {
@@ -5501,9 +5500,9 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(dragonfly_client_disk_read_bytes{namespace=~\"$namespace\",container=\"client\"})",
+          "expr": "dragonfly_client_disk_read_bytes{namespace=~\"$namespace\",container=\"client\"}",
           "instant": false,
-          "legendFormat": "total",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -5517,7 +5516,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 167
+        "y": 179
       },
       "id": 101,
       "panels": [],
@@ -5552,7 +5551,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 168
+        "y": 180
       },
       "id": 102,
       "options": {
@@ -5620,7 +5619,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 178
+        "y": 190
       },
       "id": 103,
       "options": {
@@ -5671,7 +5670,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 188
+        "y": 200
       },
       "id": 50,
       "panels": [],
@@ -5713,7 +5712,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -5744,7 +5743,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 189
+        "y": 201
       },
       "id": 99,
       "options": {
@@ -5810,14 +5809,14 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
+            "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -5848,7 +5847,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 189
+        "y": 201
       },
       "id": 98,
       "options": {
@@ -5927,7 +5926,7 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
+            "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -5965,7 +5964,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 197
+        "y": 209
       },
       "id": 62,
       "options": {
@@ -6031,7 +6030,7 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
+            "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -6069,7 +6068,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 197
+        "y": 209
       },
       "id": 100,
       "options": {
@@ -6108,7 +6107,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "1m",
+  "refresh": "",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -6249,6 +6248,6 @@
   "timezone": "",
   "title": "Client",
   "uid": "UtXpSprnk",
-  "version": 4,
+  "version": 7,
   "weekStart": ""
 }
