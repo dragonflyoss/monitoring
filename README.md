@@ -11,4 +11,4 @@ based on `grafana/dashboards/manager.json`, `grafana/dashboards/scheduler.json`,
 ## Note to developers
 
 If developers need to publish grafana dashboard to [d7y](https://grafana.com/orgs/d7y) organization,
-please contact [dragonfly maintainers](https://github.com/dragonflyoss/Dragonfly2/blob/main/MAINTAINERS.md).
+please contact [dragonfly maintainers](https://github.com/dragonflyoss/dragonfly/blob/main/MAINTAINERS.md).
