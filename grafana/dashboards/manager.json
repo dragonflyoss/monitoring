@@ -24,11 +24,9 @@
   "description": "Grafana dashboard for dragonfly manager.",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 15945,
   "graphTooltip": 0,
-  "id": 31,
+  "id": 29,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
@@ -91,12 +89,14 @@
           "fields": "",
           "values": false
         },
+        "sort": "desc",
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "v1.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -116,10 +116,6 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -158,7 +154,7 @@
             "steps": [
               {
                 "color": "#299c46",
-                "value": null
+                "value": 0
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -200,7 +196,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -208,7 +204,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"OK\",namespace=~\"$namespace\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"NotFound\",namespace=~\"$namespace\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"PermissionDenied\",namespace=~\"$namespace\"}[$interval])) + \nsum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=\"InvalidArgument\",namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "(\n  sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",grpc_code=~\"OK|NotFound|PermissionDenied|InvalidArgument\",namespace=~\"$namespace\"}[$__rate_interval]))\n  /\n  sum(rate(grpc_server_started_total{grpc_service=\"manager. Manager\",grpc_type=\"unary\",namespace=~\"$namespace\"}[$__rate_interval]))\n)\nor vector(1)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -248,7 +244,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -285,7 +281,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -293,7 +289,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "sum(rate(grpc_server_started_total{grpc_service=\"manager.Manager\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -340,6 +336,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -355,7 +352,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -405,11 +402,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -417,7 +415,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",namespace=~\"$namespace\"}[$interval])) by (grpc_code, grpc_method)",
+          "expr": "sum(rate(grpc_server_handled_total{grpc_service=\"manager.Manager\",grpc_type=\"unary\",namespace=~\"$namespace\"}[$__rate_interval])) by (grpc_code, grpc_method) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -456,7 +454,7 @@
             "steps": [
               {
                 "color": "#299c46",
-                "value": null
+                "value": 0
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -497,7 +495,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -505,7 +503,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{namespace=~\"$namespace\"}[$interval])))\n/\nsum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$interval]))",
+          "expr": "((sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$__rate_interval])) -\nsum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{namespace=~\"$namespace\"}[$__rate_interval])))\n/\nsum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$__rate_interval]))) or vector(1)",
           "format": "time_series",
           "instant": false,
           "interval": "60",
@@ -545,7 +543,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -582,7 +580,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -590,7 +588,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -637,6 +635,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -652,7 +651,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -679,11 +678,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -692,7 +692,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_total{namespace=~\"$namespace\"}[$__rate_interval])) by (instance) or vector(0)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -737,6 +737,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -752,7 +753,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -779,11 +780,12 @@
           "showLegend": false
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -792,7 +794,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{namespace=~\"$namespace\"}[$interval])) by (instance)",
+          "expr": "sum(rate(dragonfly_manager_search_scheduler_cluster_failure_total{namespace=~\"$namespace\"}[$__rate_interval])) by (instance) or vector(0)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -804,10 +806,6 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -835,7 +833,6 @@
               "options": {
                 "match": "null",
                 "result": {
-                  "index": 0,
                   "text": "N/A"
                 }
               },
@@ -847,368 +844,7 @@
             "steps": [
               {
                 "color": "#299c46",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 0,
-        "y": 37
-      },
-      "id": 64,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.2.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_create_job_success_total{namespace=~\"$namespace\"}[$interval])) /\nsum(rate(dragonfly_manager_create_job_total{namespace=~\"$namespace\"}[$interval]))",
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Create Job Success Rate",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "default": true,
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "fixedColor": "#1f78c1",
-            "mode": "fixed"
-          },
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "index": 0,
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "ops"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 18,
-        "x": 6,
-        "y": 37
-      },
-      "id": 65,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.2.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_create_job_total{namespace=~\"$namespace\"}[$interval]))",
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Create Job QPS",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "default": true,
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 41
-      },
-      "id": 66,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_create_job_total{namespace=~\"$namespace\"}[$interval]))by(name)",
-          "instant": false,
-          "interval": "60",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Create Job",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "default": true,
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 41
-      },
-      "id": 67,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_create_job_total{namespace=~\"$namespace\"}[$interval]))by(name) - \nsum(rate(dragonfly_manager_create_job_success_total{namespace=~\"$namespace\"}[$interval]))by(name) ",
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Create Job Failed",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "default": true,
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "#299c46",
-                "value": null
+                "value": 0
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -1228,7 +864,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 49
+        "y": 37
       },
       "id": 36,
       "maxDataPoints": 100,
@@ -1249,7 +885,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1257,7 +893,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_requests_total{code=~\"[12]..\",namespace=~\"$namespace\"}[$interval]))\n/ \nsum(rate(dragonfly_manager_requests_total{namespace=~\"$namespace\"}[$interval]))",
+          "expr": "(sum(rate(dragonfly_manager_requests_total{code=~\"[12]..\",namespace=~\"$namespace\"}[$__rate_interval]))\n/ \nsum(rate(dragonfly_manager_requests_total{namespace=~\"$namespace\"}[$__rate_interval]))) or vector(1)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1297,7 +933,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1313,7 +949,7 @@
         "h": 4,
         "w": 18,
         "x": 6,
-        "y": 49
+        "y": 37
       },
       "id": 38,
       "maxDataPoints": 100,
@@ -1334,7 +970,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1342,7 +978,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_manager_requests_total{namespace=~\"$namespace\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_manager_requests_total{namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1389,6 +1025,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1404,7 +1041,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1441,7 +1078,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 53
+        "y": 41
       },
       "id": 40,
       "options": {
@@ -1454,11 +1091,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1467,7 +1105,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_manager_requests_total{url!=\"/healthy/\",namespace=~\"$namespace\"}[$interval])) by (code, method, url)",
+          "expr": "sum(rate(dragonfly_manager_requests_total{url!=\"/healthy/\",namespace=~\"$namespace\"}[$__rate_interval])) by (code, method, url) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -1514,6 +1152,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1529,7 +1168,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1545,7 +1184,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 53
+        "y": 41
       },
       "id": 42,
       "options": {
@@ -1556,11 +1195,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1569,7 +1209,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(dragonfly_manager_request_duration_seconds_sum{namespace=~\"$namespace\"}[$interval]) * 1000 * 1000 / increase(dragonfly_manager_request_duration_seconds_count{namespace=~\"$namespace\"}[$interval])) by (instance)",
+          "expr": "sum(increase(dragonfly_manager_request_duration_seconds_sum{namespace=~\"$namespace\"}[$__rate_interval]) * 1000 * 1000 / increase(dragonfly_manager_request_duration_seconds_count{namespace=~\"$namespace\"}[$__rate_interval])) by (instance) or vector(0)",
           "interval": "60",
           "legendFormat": "{{instance}}",
           "range": true,
@@ -1580,11 +1220,375 @@
       "type": "timeseries"
     },
     {
-      "collapsed": false,
       "datasource": {
+        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#299c46",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 48
+      },
+      "id": 64,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "(sum(rate(dragonfly_manager_create_job_success_total{namespace=~\"$namespace\"}[$__rate_interval])) /\nsum(rate(dragonfly_manager_create_job_total{namespace=~\"$namespace\"}[$__rate_interval]))) or vector(1)",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Create Job Success Rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#1f78c1",
+            "mode": "fixed"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ops"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 18,
+        "x": 6,
+        "y": 48
+      },
+      "id": 65,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(dragonfly_manager_create_job_total{namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Create Job QPS",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 52
+      },
+      "id": 66,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(dragonfly_manager_create_job_total{namespace=~\"$namespace\"}[$__rate_interval])) by (name) or vector(0)",
+          "instant": false,
+          "interval": "60",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Create Job",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 52
+      },
+      "id": 67,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "(sum(rate(dragonfly_manager_create_job_total{namespace=~\"$namespace\"}[$__rate_interval])) by (name) - \nsum(rate(dragonfly_manager_create_job_success_total{namespace=~\"$namespace\"}[$__rate_interval])) by (name)) or vector(0)",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Create Job Failed",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1631,6 +1635,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1646,7 +1651,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1675,11 +1680,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1737,6 +1743,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1752,7 +1759,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1779,11 +1786,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1803,7 +1811,7 @@
           "step": 4
         }
       ],
-      "title": "GC duration quantiles",
+      "title": "GC Duration Quantiles",
       "type": "timeseries"
     },
     {
@@ -1841,6 +1849,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1856,7 +1865,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1896,11 +1905,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1909,7 +1919,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "process_resident_memory_bytes{namespace=~\"$namespace\"}",
+          "expr": "process_resident_memory_bytes{container=\"manager\",namespace=~\"$namespace\"}",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1918,26 +1928,9 @@
           "range": true,
           "refId": "A",
           "step": 4
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "process_virtual_memory_bytes{component=\"manager\",namespace=~\"$namespace\"}",
-          "format": "time_series",
-          "interval": "60",
-          "intervalFactor": 2,
-          "legendFormat": "{{instance}}-virtual",
-          "metric": "process_virtual_memory_bytes",
-          "range": true,
-          "refId": "B",
-          "step": 4
         }
       ],
-      "title": "process memory",
+      "title": "Process Memory",
       "type": "timeseries"
     },
     {
@@ -1975,6 +1968,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1990,7 +1984,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -2030,11 +2024,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2043,7 +2038,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "go_memstats_alloc_bytes{container=\"scheduler\",namespace=~\"$namespace\"}",
+          "expr": "go_memstats_alloc_bytes{container=\"manager\",namespace=~\"$namespace\"}",
           "interval": "60",
           "intervalFactor": 2,
           "legendFormat": "{{instance}}-bytes_allocated",
@@ -2084,28 +2079,15 @@
           "range": true,
           "refId": "D",
           "step": 4
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "rate(go_memstats_alloc_bytes_total{container=\"manager\",namespace=~\"$namespace\"}[30s])",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "{{instance}}-alloc_rate",
-          "range": true,
-          "refId": "B"
         }
       ],
-      "title": "go memstats",
+      "title": "Go Memstats",
       "type": "timeseries"
     }
   ],
+  "preload": false,
   "refresh": "",
-  "schemaVersion": 39,
+  "schemaVersion": 42,
   "tags": [],
   "templating": {
     "list": [
@@ -2114,11 +2096,9 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
           "text": "1m",
           "value": "1m"
         },
-        "hide": 0,
         "name": "interval",
         "options": [
           {
@@ -2178,14 +2158,11 @@
           }
         ],
         "query": "1m,5m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
-        "queryValue": "",
         "refresh": 2,
-        "skipUrlSync": false,
         "type": "interval"
       },
       {
         "current": {
-          "selected": false,
           "text": "dragonfly-system",
           "value": "dragonfly-system"
         },
@@ -2194,10 +2171,8 @@
           "uid": "prometheus"
         },
         "definition": "label_values(dragonfly_manager_version,namespace)",
-        "hide": 0,
         "includeAll": false,
         "label": "namespace",
-        "multi": false,
         "name": "namespace",
         "options": [],
         "query": {
@@ -2207,8 +2182,6 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       }
     ]
@@ -2217,34 +2190,9 @@
     "from": "now-6h",
     "to": "now"
   },
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
+  "timepicker": {},
   "timezone": "",
   "title": "Manager",
   "uid": "TL-e3c9nz",
-  "version": 2,
-  "weekStart": ""
+  "version": 36
 }
