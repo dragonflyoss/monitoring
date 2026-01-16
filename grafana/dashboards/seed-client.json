@@ -24,18 +24,12 @@
   "description": "Grafana dashboard for dragonfly seed client.",
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 21054,
   "graphTooltip": 0,
-  "id": 28,
+  "id": 0,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -78,25 +72,33 @@
       },
       "id": 52,
       "options": {
-        "displayLabels": ["percent"],
+        "displayLabels": [
+          "percent"
+        ],
         "legend": {
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
-          "values": ["value"]
+          "values": [
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
+        "sort": "desc",
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "v1.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -145,25 +147,33 @@
       },
       "id": 64,
       "options": {
-        "displayLabels": ["percent"],
+        "displayLabels": [
+          "percent"
+        ],
         "legend": {
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
-          "values": ["value"]
+          "values": [
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
+        "sort": "desc",
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "v1.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -212,25 +222,33 @@
       },
       "id": 65,
       "options": {
-        "displayLabels": ["percent"],
+        "displayLabels": [
+          "percent"
+        ],
         "legend": {
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
-          "values": ["value"]
+          "values": [
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
+        "sort": "desc",
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "v1.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -279,25 +297,33 @@
       },
       "id": 63,
       "options": {
-        "displayLabels": ["percent"],
+        "displayLabels": [
+          "percent"
+        ],
         "legend": {
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
-          "values": ["value"]
+          "values": [
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
+        "sort": "desc",
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "v1.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -346,25 +372,33 @@
       },
       "id": 67,
       "options": {
-        "displayLabels": ["percent"],
+        "displayLabels": [
+          "percent"
+        ],
         "legend": {
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
-          "values": ["value"]
+          "values": [
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
+        "sort": "desc",
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "v1.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -413,25 +447,33 @@
       },
       "id": 66,
       "options": {
-        "displayLabels": ["percent"],
+        "displayLabels": [
+          "percent"
+        ],
         "legend": {
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
-          "values": ["value"]
+          "values": [
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
+        "sort": "desc",
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "v1.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -484,6 +526,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -499,7 +542,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -526,11 +569,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -539,7 +583,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (type)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (type) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -588,6 +632,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -603,7 +648,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -630,11 +675,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -643,7 +689,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -692,6 +738,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -707,7 +754,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -734,11 +781,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -747,7 +795,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -796,6 +844,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -811,7 +860,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -838,11 +887,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -851,7 +901,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -900,6 +950,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -915,7 +966,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -942,11 +993,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -955,7 +1007,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1004,6 +1056,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1019,7 +1072,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1046,11 +1099,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1059,7 +1113,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (instance, container)",
+          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1108,6 +1162,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1123,7 +1178,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1150,11 +1205,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1163,7 +1219,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(dragonfly_client_concurrent_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"})",
+          "expr": "sum(dragonfly_client_concurrent_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1205,7 +1261,7 @@
             "steps": [
               {
                 "color": "#299c46",
-                "value": null
+                "value": 0
               },
               {
                 "color": "#EAB839",
@@ -1235,7 +1291,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -1243,7 +1301,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1251,7 +1309,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(sum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_client_proxy_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "((sum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) -\nsum(rate(dragonfly_client_proxy_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])))\n/ \nsum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]))) or vector(1)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1290,7 +1348,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1316,7 +1374,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -1324,7 +1384,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1332,7 +1392,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1377,6 +1437,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1392,7 +1453,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1405,7 +1466,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 24,
         "x": 0,
         "y": 49
@@ -1419,10 +1480,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1430,7 +1493,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\", namespace=~\"$namespace\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\", namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "total",
@@ -1476,6 +1539,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1491,7 +1555,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1507,7 +1571,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 57
+        "y": 58
       },
       "id": 113,
       "options": {
@@ -1518,10 +1582,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1529,7 +1595,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "rate(dragonfly_client_proxy_request_total{container=\"seed-client\", namespace=~\"$namespace\"}[$interval])",
+          "expr": "rate(dragonfly_client_proxy_request_total{container=\"seed-client\", namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "{{instance}}",
@@ -1575,6 +1641,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -1590,7 +1657,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1606,7 +1673,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 57
+        "y": 58
       },
       "id": 114,
       "options": {
@@ -1617,10 +1684,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1628,7 +1697,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "rate(dragonfly_client_proxy_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])",
+          "expr": "rate(dragonfly_client_proxy_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "{{instance}}",
@@ -1637,130 +1706,6 @@
         }
       ],
       "title": "Proxy Request Failed(instance)",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "default": true,
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "{__name__=\"dragonfly_client_proxy_request_via_dfdaemon_total\", container=\"client\", endpoint=\"http-metrics\", instance=\"172.18.0.4:4002\", job=\"dragonfly-client-metrics\", namespace=\"dragonfly-system\", pod=\"dragonfly-client-bbq8s\", service=\"dragonfly-client-metrics\"}"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 65
-      },
-      "id": 117,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "expr": "sum(rate(dragonfly_client_proxy_request_via_dfdaemon_total{container=\"seed-client\", namespace=~\"$namespace\"}[$interval]))",
-          "instant": false,
-          "interval": "60",
-          "legendFormat": "total",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Proxy Request via Dfdaemon",
       "type": "timeseries"
     },
     {
@@ -1791,7 +1736,7 @@
             "steps": [
               {
                 "color": "#299c46",
-                "value": null
+                "value": 0
               },
               {
                 "color": "#EAB839",
@@ -1811,7 +1756,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 73
+        "y": 66
       },
       "id": 104,
       "options": {
@@ -1821,7 +1766,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -1829,7 +1776,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1837,7 +1784,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(sum(rate(dragonfly_client_backend_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_client_backend_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(dragonfly_client_backend_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "((sum(rate(dragonfly_client_backend_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) -\nsum(rate(dragonfly_client_backend_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])))\n/ \nsum(rate(dragonfly_client_backend_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]))) or vector(1)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1865,7 +1812,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -1881,7 +1828,7 @@
         "h": 4,
         "w": 18,
         "x": 6,
-        "y": 73
+        "y": 66
       },
       "id": 106,
       "options": {
@@ -1891,7 +1838,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -1899,7 +1848,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -1907,7 +1856,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_client_backend_request_duration_milliseconds_count{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_backend_request_duration_milliseconds_count{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1946,12 +1895,16 @@
             },
             "insertNulls": false,
             "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 1,
             "scaleDistribution": {
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -1961,17 +1914,15 @@
               "mode": "off"
             }
           },
+          "fieldMinMax": false,
           "mappings": [],
+          "noValue": "0",
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
                 "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
+                "value": 0
               }
             ]
           },
@@ -1983,7 +1934,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 77
+        "y": 70
       },
       "id": 105,
       "options": {
@@ -1994,10 +1945,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2005,7 +1958,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(\n  0.99,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$interval]\n    )\n  ) \n)",
+          "expr": "histogram_quantile(\n  0.99,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$__rate_interval]\n    )\n  ) \n)",
           "instant": false,
           "legendFormat": "P99",
           "range": true,
@@ -2017,7 +1970,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(\n  0.95,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$interval]\n    )\n  ) \n)",
+          "expr": "histogram_quantile(\n  0.95,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$__rate_interval]\n    )\n  ) \n)",
           "hide": false,
           "instant": false,
           "legendFormat": "p95",
@@ -2030,7 +1983,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(\n  0.5,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$interval]\n    )\n  ) \n)",
+          "expr": "histogram_quantile(\n  0.5,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$__rate_interval]\n    )\n  ) \n)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2043,15 +1996,11 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 85
+        "y": 78
       },
       "id": 48,
       "panels": [],
@@ -2085,7 +2034,7 @@
             "steps": [
               {
                 "color": "#299c46",
-                "value": null
+                "value": 0
               },
               {
                 "color": "rgba(237, 129, 40, 0.89)",
@@ -2105,7 +2054,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 86
+        "y": 79
       },
       "id": 59,
       "maxDataPoints": 100,
@@ -2116,7 +2065,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -2124,7 +2075,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2133,7 +2084,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "(sum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) -\nsum(rate(dragonfly_client_download_task_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])))\n/ \nsum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "((sum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) -\nsum(rate(dragonfly_client_download_task_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])))\n/ \nsum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]))) or vector(1)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -2173,7 +2124,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -2189,7 +2140,7 @@
         "h": 4,
         "w": 18,
         "x": 6,
-        "y": 86
+        "y": 79
       },
       "id": 60,
       "maxDataPoints": 100,
@@ -2200,7 +2151,9 @@
         "orientation": "horizontal",
         "percentChangeColorMode": "standard",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -2208,7 +2161,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2217,7 +2170,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval]))",
+          "expr": "sum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -2257,13 +2210,17 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "smooth",
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -2279,7 +2236,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -2295,7 +2252,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 90
+        "y": 83
       },
       "id": 61,
       "options": {
@@ -2306,11 +2263,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2319,7 +2277,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])",
+          "expr": "rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -2368,6 +2326,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -2383,7 +2342,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -2399,7 +2358,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 90
+        "y": 83
       },
       "id": 97,
       "options": {
@@ -2410,11 +2369,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2423,7 +2383,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(dragonfly_client_download_task_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$interval])",
+          "expr": "rate(dragonfly_client_download_task_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -2443,7 +2403,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 98
+        "y": 91
       },
       "id": 75,
       "panels": [],
@@ -2488,6 +2448,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -2503,7 +2464,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -2519,7 +2480,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 99
+        "y": 92
       },
       "id": 76,
       "options": {
@@ -2530,11 +2491,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2543,7 +2505,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2556,7 +2518,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2569,7 +2531,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2618,6 +2580,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -2633,7 +2596,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -2649,7 +2612,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 99
+        "y": 92
       },
       "id": 78,
       "options": {
@@ -2660,11 +2623,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2673,7 +2637,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2686,7 +2650,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2699,7 +2663,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2747,6 +2711,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -2762,7 +2727,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -2778,7 +2743,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 106
+        "y": 99
       },
       "id": 79,
       "options": {
@@ -2789,11 +2754,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2802,7 +2768,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2815,7 +2781,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2828,7 +2794,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -2877,6 +2843,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -2892,7 +2859,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -2908,7 +2875,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 106
+        "y": 99
       },
       "id": 80,
       "options": {
@@ -2919,11 +2886,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -2932,7 +2900,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -2945,7 +2913,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -2958,7 +2926,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3007,6 +2975,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -3022,7 +2991,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -3038,7 +3007,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 113
+        "y": 106
       },
       "id": 81,
       "options": {
@@ -3049,11 +3018,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -3062,7 +3032,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3075,7 +3045,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3088,7 +3058,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3137,6 +3107,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -3152,7 +3123,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -3168,7 +3139,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 113
+        "y": 106
       },
       "id": 82,
       "options": {
@@ -3179,11 +3150,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -3192,7 +3164,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3205,7 +3177,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3218,7 +3190,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3267,6 +3239,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -3282,7 +3255,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -3298,7 +3271,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 120
+        "y": 113
       },
       "id": 83,
       "options": {
@@ -3309,11 +3282,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -3322,7 +3296,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3335,7 +3309,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3348,7 +3322,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3397,6 +3371,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -3412,7 +3387,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -3428,7 +3403,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 120
+        "y": 113
       },
       "id": 84,
       "options": {
@@ -3439,11 +3414,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -3452,7 +3428,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3465,7 +3441,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3478,7 +3454,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3527,6 +3503,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -3542,7 +3519,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -3558,7 +3535,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 127
+        "y": 120
       },
       "id": 85,
       "options": {
@@ -3569,11 +3546,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -3582,7 +3560,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3595,7 +3573,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3608,7 +3586,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3657,6 +3635,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -3672,7 +3651,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -3688,7 +3667,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 127
+        "y": 120
       },
       "id": 86,
       "options": {
@@ -3699,11 +3678,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -3712,7 +3692,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3725,7 +3705,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3738,7 +3718,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3787,6 +3767,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -3802,7 +3783,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -3818,7 +3799,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 134
+        "y": 127
       },
       "id": 87,
       "options": {
@@ -3829,11 +3810,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -3842,7 +3824,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3855,7 +3837,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3868,7 +3850,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -3917,6 +3899,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -3932,7 +3915,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -3948,7 +3931,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 134
+        "y": 127
       },
       "id": 88,
       "options": {
@@ -3959,11 +3942,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -3972,7 +3956,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -3985,7 +3969,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -3998,7 +3982,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4047,6 +4031,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -4062,7 +4047,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -4078,7 +4063,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 141
+        "y": 134
       },
       "id": 89,
       "options": {
@@ -4089,11 +4074,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -4102,7 +4088,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4115,7 +4101,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4128,7 +4114,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4177,6 +4163,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -4192,7 +4179,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -4208,7 +4195,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 141
+        "y": 134
       },
       "id": 90,
       "options": {
@@ -4219,11 +4206,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -4232,7 +4220,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4245,7 +4233,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4258,7 +4246,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4307,6 +4295,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -4322,7 +4311,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -4338,7 +4327,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 148
+        "y": 141
       },
       "id": 91,
       "options": {
@@ -4349,11 +4338,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -4362,7 +4352,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4375,7 +4365,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4388,7 +4378,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4437,6 +4427,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -4452,7 +4443,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -4468,7 +4459,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 148
+        "y": 141
       },
       "id": 92,
       "options": {
@@ -4479,11 +4470,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -4492,7 +4484,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4505,7 +4497,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4518,7 +4510,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4567,6 +4559,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -4582,7 +4575,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -4598,7 +4591,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 155
+        "y": 148
       },
       "id": 93,
       "options": {
@@ -4609,11 +4602,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -4622,7 +4616,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4635,7 +4629,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4648,7 +4642,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4697,6 +4691,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -4712,7 +4707,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -4728,7 +4723,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 155
+        "y": 148
       },
       "id": 94,
       "options": {
@@ -4739,11 +4734,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -4752,7 +4748,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4765,7 +4761,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4778,7 +4774,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4827,6 +4823,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -4842,7 +4839,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -4858,7 +4855,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 162
+        "y": 155
       },
       "id": 95,
       "options": {
@@ -4869,11 +4866,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -4882,7 +4880,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -4895,7 +4893,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -4908,7 +4906,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -4957,6 +4955,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -4972,7 +4971,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -4988,7 +4987,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 162
+        "y": 155
       },
       "id": 96,
       "options": {
@@ -4999,11 +4998,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -5012,7 +5012,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "P99",
@@ -5025,7 +5025,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P95",
@@ -5038,7 +5038,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
           "hide": false,
           "instant": false,
           "legendFormat": "P50",
@@ -5055,7 +5055,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 169
+        "y": 162
       },
       "id": 107,
       "panels": [],
@@ -5089,28 +5089,37 @@
         "h": 9,
         "w": 4,
         "x": 0,
-        "y": 170
+        "y": 163
       },
       "id": 108,
       "options": {
-        "displayLabels": ["percent"],
+        "displayLabels": [
+          "percent"
+        ],
         "legend": {
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
-          "values": ["value"]
+          "values": [
+            "value"
+          ]
         },
         "pieType": "pie",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
+        "sort": "desc",
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -5157,6 +5166,9 @@
             "cellOptions": {
               "type": "auto"
             },
+            "footer": {
+              "reducers": []
+            },
             "inspect": false
           },
           "mappings": [],
@@ -5167,7 +5179,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -5246,7 +5258,7 @@
                   "steps": [
                     {
                       "color": "green",
-                      "value": null
+                      "value": 0
                     },
                     {
                       "color": "#EAB839",
@@ -5267,21 +5279,15 @@
         "h": 9,
         "w": 20,
         "x": 4,
-        "y": 170
+        "y": 163
       },
       "id": 109,
       "options": {
         "cellHeight": "sm",
-        "footer": {
-          "countRows": false,
-          "fields": "",
-          "reducer": ["sum"],
-          "show": false
-        },
         "frameIndex": 1,
         "showHeader": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -5415,6 +5421,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -5430,7 +5437,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -5446,7 +5453,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 179
+        "y": 172
       },
       "id": 116,
       "options": {
@@ -5457,10 +5464,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -5468,7 +5477,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "dragonfly_client_disk_written_bytes{namespace=~\"$namespace\",container=\"seed-client\"}",
+          "expr": "dragonfly_client_disk_written_bytes{namespace=~\"$namespace\",container=\"seed-client\"} or vector(0)",
           "instant": false,
           "legendFormat": "{{instance}}",
           "range": true,
@@ -5513,6 +5522,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -5528,7 +5538,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -5544,7 +5554,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 179
+        "y": 172
       },
       "id": 115,
       "options": {
@@ -5555,10 +5565,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -5566,7 +5578,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "dragonfly_client_disk_read_bytes{namespace=~\"$namespace\",container=\"seed-client\"}",
+          "expr": "dragonfly_client_disk_read_bytes{namespace=~\"$namespace\",container=\"seed-client\"} or vector(0)",
           "instant": false,
           "legendFormat": "{{instance}}",
           "range": true,
@@ -5582,7 +5594,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 187
+        "y": 180
       },
       "id": 101,
       "panels": [],
@@ -5605,7 +5617,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -5617,18 +5629,26 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 188
+        "y": 181
       },
       "id": 102,
       "options": {
         "displayMode": "gradient",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
         "maxVizHeight": 300,
         "minVizHeight": 10,
         "minVizWidth": 0,
         "namePlacement": "auto",
         "orientation": "vertical",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -5636,7 +5656,7 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -5671,7 +5691,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               }
             ]
           },
@@ -5683,18 +5703,26 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 198
+        "y": 191
       },
       "id": 103,
       "options": {
         "displayMode": "gradient",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
         "maxVizHeight": 300,
         "minVizHeight": 10,
         "minVizWidth": 0,
         "namePlacement": "auto",
         "orientation": "vertical",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -5702,7 +5730,7 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -5724,15 +5752,11 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 208
+        "y": 201
       },
       "id": 50,
       "panels": [],
@@ -5774,6 +5798,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -5789,7 +5814,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -5805,7 +5830,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 209
+        "y": 202
       },
       "id": 99,
       "options": {
@@ -5816,11 +5841,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -5878,6 +5904,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -5893,7 +5920,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -5909,7 +5936,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 209
+        "y": 202
       },
       "id": 98,
       "options": {
@@ -5920,29 +5947,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "process_virtual_memory_bytes{container=\"seed-client\",namespace=~\"$namespace\"}",
-          "format": "time_series",
-          "interval": "60",
-          "intervalFactor": 2,
-          "legendFormat": "{{instance}}-{{container}}-virtual",
-          "metric": "go_gc_duration_seconds",
-          "range": true,
-          "refId": "A",
-          "step": 4
-        },
         {
           "datasource": {
             "type": "prometheus",
@@ -5995,6 +6006,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -6010,7 +6022,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -6026,7 +6038,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 217
+        "y": 210
       },
       "id": 62,
       "options": {
@@ -6037,11 +6049,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -6099,6 +6112,7 @@
               "type": "linear"
             },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": true,
             "stacking": {
               "group": "A",
@@ -6114,7 +6128,7 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 0
               },
               {
                 "color": "red",
@@ -6130,7 +6144,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 217
+        "y": 210
       },
       "id": 100,
       "options": {
@@ -6141,11 +6155,12 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "10.4.1",
+      "pluginVersion": "12.3.1",
       "targets": [
         {
           "datasource": {
@@ -6169,8 +6184,9 @@
       "type": "timeseries"
     }
   ],
+  "preload": false,
   "refresh": "",
-  "schemaVersion": 39,
+  "schemaVersion": 42,
   "tags": [],
   "templating": {
     "list": [
@@ -6179,11 +6195,9 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
           "text": "1m",
           "value": "1m"
         },
-        "hide": 0,
         "name": "interval",
         "options": [
           {
@@ -6243,14 +6257,11 @@
           }
         ],
         "query": "1m,5m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
-        "queryValue": "",
         "refresh": 2,
-        "skipUrlSync": false,
         "type": "interval"
       },
       {
         "current": {
-          "selected": false,
           "text": "dragonfly-system",
           "value": "dragonfly-system"
         },
@@ -6259,10 +6270,8 @@
           "uid": "prometheus"
         },
         "definition": "label_values(dragonfly_client_version,namespace)",
-        "hide": 0,
         "includeAll": false,
         "label": "namespace",
-        "multi": false,
         "name": "namespace",
         "options": [],
         "query": {
@@ -6272,8 +6281,6 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       }
     ]
@@ -6282,24 +6289,9 @@
     "from": "now-6h",
     "to": "now"
   },
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
-  },
+  "timepicker": {},
   "timezone": "",
   "title": "Seed Client",
   "uid": "HtXpCprnk",
-  "version": 5,
-  "weekStart": ""
+  "version": 48
 }

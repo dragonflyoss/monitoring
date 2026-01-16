@@ -8,3 +8,7 @@ prometheus:
     ruleSelector:
       matchLabels:
         app: dragonfly
+
+grafana:
+  adminUser: admin
+  adminPassword: prom-operator
