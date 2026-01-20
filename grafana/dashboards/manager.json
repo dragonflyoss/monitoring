@@ -2187,12 +2187,12 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Manager",
   "uid": "TL-e3c9nz",
-  "version": 36
+  "version": 3
 }

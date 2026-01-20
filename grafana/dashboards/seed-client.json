@@ -550,7 +550,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "binbps"
         },
         "overrides": []
       },
@@ -583,7 +583,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (type) or vector(0)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (type) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -656,7 +656,7 @@
               }
             ]
           },
-          "unit": "Bps"
+          "unit": "binbps"
         },
         "overrides": []
       },
@@ -689,7 +689,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
+          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -762,7 +762,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "binbps"
         },
         "overrides": []
       },
@@ -795,7 +795,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (instance, container) or vector(0)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -868,7 +868,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "binbps"
         },
         "overrides": []
       },
@@ -901,7 +901,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (instance, container) or vector(0)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -974,7 +974,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "binbps"
         },
         "overrides": []
       },
@@ -1007,7 +1007,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (instance, container) or vector(0)",
+          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1080,7 +1080,7 @@
               }
             ]
           },
-          "unit": "binBps"
+          "unit": "binbps"
         },
         "overrides": []
       },
@@ -1113,7 +1113,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (instance, container) or vector(0)",
+          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -5387,214 +5387,12 @@
       "type": "table"
     },
     {
-      "datasource": {
-        "default": true,
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "showValues": false,
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "binBps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 172
-      },
-      "id": 116,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "12.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "expr": "dragonfly_client_disk_written_bytes{namespace=~\"$namespace\",container=\"seed-client\"} or vector(0)",
-          "instant": false,
-          "legendFormat": "{{instance}}",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Disk Write",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "default": true,
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "showValues": false,
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "binBps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 172
-      },
-      "id": 115,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "12.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "prometheus"
-          },
-          "editorMode": "code",
-          "expr": "dragonfly_client_disk_read_bytes{namespace=~\"$namespace\",container=\"seed-client\"} or vector(0)",
-          "instant": false,
-          "legendFormat": "{{instance}}",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Disk Read",
-      "type": "timeseries"
-    },
-    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 180
+        "y": 172
       },
       "id": 101,
       "panels": [],
@@ -5629,7 +5427,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 181
+        "y": 173
       },
       "id": 102,
       "options": {
@@ -5703,7 +5501,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 191
+        "y": 183
       },
       "id": 103,
       "options": {
@@ -5756,7 +5554,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 201
+        "y": 193
       },
       "id": 50,
       "panels": [],
@@ -5830,7 +5628,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 202
+        "y": 194
       },
       "id": 99,
       "options": {
@@ -5936,7 +5734,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 202
+        "y": 194
       },
       "id": 98,
       "options": {
@@ -6038,7 +5836,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 210
+        "y": 202
       },
       "id": 62,
       "options": {
@@ -6144,7 +5942,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 210
+        "y": 202
       },
       "id": 100,
       "options": {
@@ -6286,12 +6084,12 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Seed Client",
   "uid": "HtXpCprnk",
-  "version": 48
+  "version": 10
 }
