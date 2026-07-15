@@ -4,7 +4,7 @@
       {
         "builtIn": 1,
         "datasource": {
-          "type": "datasource",
+          "type": "grafana",
           "uid": "grafana"
         },
         "enable": true,
@@ -25,8 +25,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 0,
-  "links": [],
+  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
@@ -36,20 +35,19 @@
         "x": 0,
         "y": 0
       },
-      "id": 22,
-      "panels": [],
+      "id": 115,
       "title": "Global",
       "type": "row"
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "#73BF69",
             "mode": "palette-classic"
           },
           "custom": {
@@ -59,10 +57,8 @@
               "viz": false
             }
           },
-          "mappings": [],
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 9,
@@ -77,6 +73,7 @@
         ],
         "legend": {
           "displayMode": "table",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true,
           "values": [
@@ -98,7 +95,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -118,13 +115,13 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "#73BF69",
             "mode": "palette-classic"
           },
           "custom": {
@@ -134,10 +131,8 @@
               "viz": false
             }
           },
-          "mappings": [],
           "unit": "bytes"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 9,
@@ -152,6 +147,7 @@
         ],
         "legend": {
           "displayMode": "table",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true,
           "values": [
@@ -173,7 +169,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -193,13 +189,13 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "#73BF69",
             "mode": "palette-classic"
           },
           "custom": {
@@ -209,10 +205,8 @@
               "viz": false
             }
           },
-          "mappings": [],
           "unit": "bytes"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 9,
@@ -227,6 +221,7 @@
         ],
         "legend": {
           "displayMode": "table",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true,
           "values": [
@@ -248,7 +243,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -268,13 +263,13 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "#73BF69",
             "mode": "palette-classic"
           },
           "custom": {
@@ -284,10 +279,8 @@
               "viz": false
             }
           },
-          "mappings": [],
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 9,
@@ -302,6 +295,7 @@
         ],
         "legend": {
           "displayMode": "table",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true,
           "values": [
@@ -323,7 +317,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -343,13 +337,13 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "#73BF69",
             "mode": "palette-classic"
           },
           "custom": {
@@ -359,10 +353,8 @@
               "viz": false
             }
           },
-          "mappings": [],
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 9,
@@ -377,6 +369,7 @@
         ],
         "legend": {
           "displayMode": "table",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true,
           "values": [
@@ -398,7 +391,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -418,13 +411,13 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "#73BF69",
             "mode": "palette-classic"
           },
           "custom": {
@@ -434,10 +427,8 @@
               "viz": false
             }
           },
-          "mappings": [],
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 9,
@@ -452,6 +443,7 @@
         ],
         "legend": {
           "displayMode": "table",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true,
           "values": [
@@ -473,7 +465,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -493,7 +485,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -536,7 +527,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -550,9 +540,8 @@
               }
             ]
           },
-          "unit": "binbps"
-        },
-        "overrides": []
+          "unit": "bps"
+        }
       },
       "gridPos": {
         "h": 9,
@@ -562,9 +551,15 @@
       },
       "id": 71,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -574,7 +569,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -583,7 +578,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (type) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_download_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (type) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -599,7 +594,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -642,7 +636,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -656,9 +649,8 @@
               }
             ]
           },
-          "unit": "binbps"
-        },
-        "overrides": []
+          "unit": "bps"
+        }
       },
       "gridPos": {
         "h": 9,
@@ -668,9 +660,15 @@
       },
       "id": 74,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -680,7 +678,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -689,7 +687,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -705,7 +703,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -748,7 +745,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -762,9 +758,8 @@
               }
             ]
           },
-          "unit": "binbps"
-        },
-        "overrides": []
+          "unit": "bps"
+        }
       },
       "gridPos": {
         "h": 9,
@@ -774,9 +769,15 @@
       },
       "id": 68,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -786,7 +787,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -795,7 +796,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_download_traffic{type=\"LOCAL_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -811,7 +812,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -854,7 +854,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -868,9 +867,8 @@
               }
             ]
           },
-          "unit": "binbps"
-        },
-        "overrides": []
+          "unit": "bps"
+        }
       },
       "gridPos": {
         "h": 9,
@@ -880,9 +878,15 @@
       },
       "id": 72,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -892,7 +896,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -901,7 +905,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_download_traffic{type=\"REMOTE_PEER\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -917,7 +921,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -960,7 +963,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -974,9 +976,8 @@
               }
             ]
           },
-          "unit": "binbps"
-        },
-        "overrides": []
+          "unit": "bps"
+        }
       },
       "gridPos": {
         "h": 9,
@@ -986,9 +987,15 @@
       },
       "id": 70,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -998,7 +1005,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1007,7 +1014,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_download_traffic{type=\"BACK_TO_SOURCE\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1023,7 +1030,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1066,7 +1072,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1080,9 +1085,8 @@
               }
             ]
           },
-          "unit": "binbps"
-        },
-        "overrides": []
+          "unit": "bps"
+        }
       },
       "gridPos": {
         "h": 9,
@@ -1092,9 +1096,15 @@
       },
       "id": 55,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -1104,7 +1114,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1113,7 +1123,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_upload_traffic{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) * 8) by (instance, container) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -1129,7 +1139,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1172,7 +1181,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1187,8 +1195,7 @@
             ]
           },
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -1198,9 +1205,15 @@
       },
       "id": 77,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -1210,7 +1223,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1235,7 +1248,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1274,8 +1286,7 @@
             ]
           },
           "unit": "percentunit"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 4,
@@ -1301,7 +1312,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1321,7 +1332,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1357,8 +1367,7 @@
             ]
           },
           "unit": "ops"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 4,
@@ -1384,7 +1393,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1392,7 +1401,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_proxy_request_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1404,7 +1413,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1447,7 +1455,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1462,8 +1469,7 @@
             ]
           },
           "unit": "short"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 9,
@@ -1473,9 +1479,15 @@
       },
       "id": 112,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -1485,7 +1497,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1493,7 +1505,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_client_proxy_request_total{container=\"seed-client\", namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_proxy_request_total{container=\"seed-client\", namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "total",
@@ -1506,7 +1518,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1549,7 +1560,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1564,8 +1574,7 @@
             ]
           },
           "unit": "short"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -1575,9 +1584,15 @@
       },
       "id": 113,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -1587,7 +1602,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1595,7 +1610,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "rate(dragonfly_client_proxy_request_total{container=\"seed-client\", namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
+          "expr": "irate(dragonfly_client_proxy_request_total{container=\"seed-client\", namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "{{instance}}",
@@ -1608,7 +1623,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1651,7 +1665,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1666,8 +1679,7 @@
             ]
           },
           "unit": "short"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -1677,9 +1689,15 @@
       },
       "id": 114,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -1689,7 +1707,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1697,7 +1715,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "rate(dragonfly_client_proxy_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
+          "expr": "irate(dragonfly_client_proxy_request_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
           "instant": false,
           "interval": "60",
           "legendFormat": "{{instance}}",
@@ -1710,7 +1728,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1749,8 +1766,7 @@
             ]
           },
           "unit": "percentunit"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 4,
@@ -1776,7 +1792,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1796,7 +1812,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1806,7 +1821,6 @@
             "fixedColor": "#1f78c1",
             "mode": "fixed"
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1821,8 +1835,7 @@
             ]
           },
           "unit": "ops"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 4,
@@ -1848,7 +1861,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1856,7 +1869,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "sum(rate(dragonfly_client_backend_request_duration_milliseconds_count{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_backend_request_duration_milliseconds_count{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -1868,7 +1881,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -1914,8 +1926,6 @@
               "mode": "off"
             }
           },
-          "fieldMinMax": false,
-          "mappings": [],
           "noValue": "0",
           "thresholds": {
             "mode": "absolute",
@@ -1927,8 +1937,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -1938,9 +1947,15 @@
       },
       "id": 105,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -1950,7 +1965,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -1971,7 +1986,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(\n  0.95,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$__rate_interval]\n    )\n  ) \n)",
-          "hide": false,
           "instant": false,
           "legendFormat": "p95",
           "range": true,
@@ -1984,7 +1998,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(\n  0.5,\n  sum by (le)(\n    rate(\n      dragonfly_client_backend_request_duration_milliseconds_bucket{\n       namespace=~\"$namespace\",container=\"seed-client\",\n      }[$__rate_interval]\n    )\n  ) \n)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -2002,14 +2015,12 @@
         "x": 0,
         "y": 78
       },
-      "id": 48,
-      "panels": [],
+      "id": 116,
       "title": "GRPC",
       "type": "row"
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -2047,8 +2058,7 @@
             ]
           },
           "unit": "percentunit"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 4,
@@ -2075,7 +2085,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -2098,7 +2108,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -2133,8 +2142,7 @@
             ]
           },
           "unit": "ops"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 4,
@@ -2161,7 +2169,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -2170,7 +2178,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
+          "expr": "sum(irate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 1,
@@ -2184,7 +2192,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -2230,7 +2237,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -2245,8 +2251,7 @@
             ]
           },
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -2256,9 +2261,15 @@
       },
       "id": 61,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -2268,7 +2279,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -2277,7 +2288,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
+          "expr": "irate(dragonfly_client_download_task_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -2293,7 +2304,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -2336,7 +2346,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -2351,8 +2360,7 @@
             ]
           },
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -2362,9 +2370,15 @@
       },
       "id": 97,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -2374,7 +2388,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -2383,7 +2397,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(dragonfly_client_download_task_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
+          "expr": "irate(dragonfly_client_download_task_failure_total{container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval]) or vector(0)",
           "format": "time_series",
           "interval": "60",
           "intervalFactor": 2,
@@ -2405,14 +2419,12 @@
         "x": 0,
         "y": 91
       },
-      "id": 75,
-      "panels": [],
+      "id": 117,
       "title": "Task",
       "type": "row"
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -2458,7 +2470,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -2473,8 +2484,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -2484,9 +2494,15 @@
       },
       "id": 76,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -2496,7 +2512,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -2519,7 +2535,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -2532,7 +2547,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"1\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -2544,7 +2558,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -2590,7 +2603,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -2605,8 +2617,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -2616,9 +2627,15 @@
       },
       "id": 78,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -2628,7 +2645,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -2651,7 +2668,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -2664,7 +2680,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"2\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -2721,7 +2736,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -2736,8 +2750,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -2747,9 +2760,15 @@
       },
       "id": 79,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -2759,7 +2778,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -2782,7 +2801,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -2795,7 +2813,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"3\",container=\"seed-client\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -2807,7 +2824,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -2853,7 +2869,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -2868,8 +2883,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -2879,9 +2893,15 @@
       },
       "id": 80,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -2891,7 +2911,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -2914,7 +2934,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -2927,7 +2946,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"4\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -2939,7 +2957,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -2985,7 +3002,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3000,8 +3016,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -3011,9 +3026,15 @@
       },
       "id": 81,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -3023,7 +3044,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -3046,7 +3067,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -3059,7 +3079,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"5\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -3071,7 +3090,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -3117,7 +3135,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3132,8 +3149,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -3143,9 +3159,15 @@
       },
       "id": 82,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -3155,7 +3177,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -3178,7 +3200,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -3191,7 +3212,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"6\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -3203,7 +3223,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -3249,7 +3268,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3264,8 +3282,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -3275,9 +3292,15 @@
       },
       "id": 83,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -3287,7 +3310,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -3310,7 +3333,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -3323,7 +3345,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"7\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -3335,7 +3356,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -3381,7 +3401,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3396,8 +3415,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -3407,9 +3425,15 @@
       },
       "id": 84,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -3419,7 +3443,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -3442,7 +3466,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -3455,7 +3478,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"8\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -3467,7 +3489,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -3513,7 +3534,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3528,8 +3548,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -3539,9 +3558,15 @@
       },
       "id": 85,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -3551,7 +3576,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -3574,7 +3599,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -3587,7 +3611,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"9\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -3599,7 +3622,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -3645,7 +3667,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3660,8 +3681,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -3671,9 +3691,15 @@
       },
       "id": 86,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -3683,7 +3709,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -3706,7 +3732,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -3719,7 +3744,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"10\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -3731,7 +3755,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -3777,7 +3800,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3792,8 +3814,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -3803,9 +3824,15 @@
       },
       "id": 87,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -3815,7 +3842,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -3838,7 +3865,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -3851,7 +3877,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"11\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -3863,7 +3888,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -3909,7 +3933,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3924,8 +3947,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -3935,9 +3957,15 @@
       },
       "id": 88,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -3947,7 +3975,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -3970,7 +3998,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -3983,7 +4010,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"12\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -3995,7 +4021,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -4041,7 +4066,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4056,8 +4080,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -4067,9 +4090,15 @@
       },
       "id": 89,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -4079,7 +4108,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -4102,7 +4131,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -4115,7 +4143,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"13\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -4127,7 +4154,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -4173,7 +4199,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4188,8 +4213,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -4199,9 +4223,15 @@
       },
       "id": 90,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -4211,7 +4241,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -4234,7 +4264,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -4247,7 +4276,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"14\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -4259,7 +4287,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -4305,7 +4332,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4320,8 +4346,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -4331,9 +4356,15 @@
       },
       "id": 91,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -4343,7 +4374,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -4366,7 +4397,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -4379,7 +4409,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"15\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -4391,7 +4420,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -4437,7 +4465,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4452,8 +4479,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -4463,9 +4489,15 @@
       },
       "id": 92,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -4475,7 +4507,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -4498,7 +4530,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -4511,7 +4542,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"16\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -4523,7 +4553,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -4569,7 +4598,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4584,8 +4612,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -4595,9 +4622,15 @@
       },
       "id": 93,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -4607,7 +4640,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -4630,7 +4663,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -4643,7 +4675,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"17\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -4655,7 +4686,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -4701,7 +4731,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4716,8 +4745,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -4727,9 +4755,15 @@
       },
       "id": 94,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -4739,7 +4773,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -4762,7 +4796,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -4775,7 +4808,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"18\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -4787,7 +4819,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -4833,7 +4864,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4848,8 +4878,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -4859,9 +4888,15 @@
       },
       "id": 95,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -4871,7 +4906,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -4894,7 +4929,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -4907,7 +4941,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"19\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -4919,7 +4952,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -4965,7 +4997,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4980,8 +5011,7 @@
             ]
           },
           "unit": "ms"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 7,
@@ -4991,9 +5021,15 @@
       },
       "id": 96,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -5003,7 +5039,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5026,7 +5062,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.95, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P95",
           "range": true,
@@ -5039,7 +5074,6 @@
           },
           "editorMode": "code",
           "expr": "histogram_quantile(0.50, sum(rate(dragonfly_client_download_task_duration_milliseconds_bucket{task_size_level=\"20\",container=\"seed-client\",namespace=~\"$namespace\"}[$__rate_interval])) by (le)) or vector(0)",
-          "hide": false,
           "instant": false,
           "legendFormat": "P50",
           "range": true,
@@ -5057,20 +5091,19 @@
         "x": 0,
         "y": 162
       },
-      "id": 107,
-      "panels": [],
+      "id": 118,
       "title": "Disk",
       "type": "row"
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "#73BF69",
             "mode": "palette-classic"
           },
           "custom": {
@@ -5080,10 +5113,8 @@
               "viz": false
             }
           },
-          "mappings": [],
           "unit": "bytes"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 9,
@@ -5098,6 +5129,7 @@
         ],
         "legend": {
           "displayMode": "table",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true,
           "values": [
@@ -5119,7 +5151,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5140,7 +5172,6 @@
           },
           "editorMode": "code",
           "expr": "sum(dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}-\ndragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"})",
-          "hide": false,
           "instant": false,
           "legendFormat": "Free Space",
           "range": true,
@@ -5152,7 +5183,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -5171,7 +5201,6 @@
             },
             "inspect": false
           },
-          "mappings": [],
           "max": 1,
           "min": 0,
           "thresholds": {
@@ -5287,7 +5316,7 @@
         "frameIndex": 1,
         "showHeader": true
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5312,7 +5341,6 @@
           "exemplar": false,
           "expr": "dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
           "format": "table",
-          "hide": false,
           "instant": true,
           "legendFormat": "{{instance}}",
           "range": false,
@@ -5327,7 +5355,6 @@
           "exemplar": false,
           "expr": "dragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"} - dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
           "format": "table",
-          "hide": false,
           "instant": true,
           "legendFormat": "{{instance}}",
           "range": false,
@@ -5342,7 +5369,6 @@
           "exemplar": false,
           "expr": "dragonfly_client_disk_usage_space_total{container=\"seed-client\",namespace=~\"$namespace\"} /\ndragonfly_client_disk_space_total{container=\"seed-client\",namespace=~\"$namespace\"}",
           "format": "table",
-          "hide": false,
           "instant": true,
           "legendFormat": "{{instance}}",
           "range": false,
@@ -5394,21 +5420,17 @@
         "x": 0,
         "y": 172
       },
-      "id": 101,
-      "panels": [],
+      "id": 119,
       "title": "Host",
       "type": "row"
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
-          "mappings": [],
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -5420,8 +5442,7 @@
             ]
           },
           "unit": "bytes"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 10,
@@ -5435,6 +5456,7 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": false
         },
@@ -5454,7 +5476,7 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5475,14 +5497,11 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
-          "mappings": [],
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -5494,8 +5513,7 @@
             ]
           },
           "unit": "bytes"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 10,
@@ -5509,6 +5527,7 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": false
         },
@@ -5528,7 +5547,7 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5556,14 +5575,12 @@
         "x": 0,
         "y": 193
       },
-      "id": 50,
-      "panels": [],
+      "id": 120,
       "title": "Rust",
       "type": "row"
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -5606,7 +5623,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -5621,8 +5637,7 @@
             ]
           },
           "unit": "percentunit"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -5632,9 +5647,15 @@
       },
       "id": 99,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -5644,7 +5665,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5669,7 +5690,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -5712,7 +5732,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -5727,8 +5746,7 @@
             ]
           },
           "unit": "bytes"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -5738,9 +5756,15 @@
       },
       "id": 98,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -5750,7 +5774,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5759,7 +5783,6 @@
           },
           "editorMode": "code",
           "expr": "process_resident_memory_bytes{container=\"seed-client\",namespace=~\"$namespace\"}",
-          "hide": false,
           "instant": false,
           "legendFormat": "{{instance}}-{{container}}-resident",
           "range": true,
@@ -5771,7 +5794,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -5814,7 +5836,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -5829,8 +5850,7 @@
             ]
           },
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -5840,9 +5860,15 @@
       },
       "id": 62,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -5852,7 +5878,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5877,7 +5903,6 @@
     },
     {
       "datasource": {
-        "default": true,
         "type": "prometheus",
         "uid": "prometheus"
       },
@@ -5920,7 +5945,6 @@
               "mode": "off"
             }
           },
-          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -5935,8 +5959,7 @@
             ]
           },
           "unit": "none"
-        },
-        "overrides": []
+        }
       },
       "gridPos": {
         "h": 8,
@@ -5946,9 +5969,15 @@
       },
       "id": 100,
       "options": {
+        "annotations": {
+          "clustering": -1,
+          "multiLane": false
+        },
         "legend": {
           "calcs": [],
           "displayMode": "list",
+          "enableFacetedFilter": false,
+          "overflow": "ellipsis",
           "placement": "bottom",
           "showLegend": true
         },
@@ -5958,7 +5987,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.1",
+      "pluginVersion": "13.1.0",
       "targets": [
         {
           "datasource": {
@@ -5985,7 +6014,6 @@
   "preload": false,
   "refresh": "",
   "schemaVersion": 42,
-  "tags": [],
   "templating": {
     "list": [
       {
@@ -5996,6 +6024,7 @@
           "text": "1m",
           "value": "1m"
         },
+        "hide": 0,
         "name": "interval",
         "options": [
           {
@@ -6055,10 +6084,11 @@
           }
         ],
         "query": "1m,5m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
-        "refresh": 2,
+        "skipUrlSync": false,
         "type": "interval"
       },
       {
+        "allowCustomValue": true,
         "current": {
           "text": "dragonfly-system",
           "value": "dragonfly-system"
@@ -6068,8 +6098,10 @@
           "uid": "prometheus"
         },
         "definition": "label_values(dragonfly_client_version,namespace)",
+        "hide": 0,
         "includeAll": false,
         "label": "namespace",
+        "multi": false,
         "name": "namespace",
         "options": [],
         "query": {
@@ -6079,6 +6111,9 @@
         },
         "refresh": 1,
         "regex": "",
+        "regexApplyTo": "value",
+        "skipUrlSync": false,
+        "sort": 0,
         "type": "query"
       }
     ]
@@ -6087,9 +6122,23 @@
     "from": "now-3h",
     "to": "now"
   },
-  "timepicker": {},
-  "timezone": "",
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "browser",
   "title": "Seed Client",
+  "version": 15,
   "uid": "HtXpCprnk",
-  "version": 10
+  "id": 838494964539392
 }
